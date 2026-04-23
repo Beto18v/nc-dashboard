@@ -7,103 +7,15 @@ import Link from "next/link";
 import { Section } from "@/components/layout/section";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { siteBanner, siteExamples } from "@/data/site";
+import { siteBanner, siteExamples, siteUi } from "@/data/site";
 
-type DemoItem = {
-  name: string;
-  category: string;
-  href: string;
-  image: string;
-  shortDescription: string;
-  longDescription: string;
-  features: string[];
-};
-
-const demoItems: DemoItem[] = [
-  {
-    name: "Restaurante Élite",
-    category: "Restaurante",
-    href: "/demo/restaurant",
-    image:
-      "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1400&q=80",
-    shortDescription:
-      "Landing premium para reservas y pedidos directos por WhatsApp.",
-    longDescription:
-      "Diseño web profesional para restaurantes que quieren verse exclusivos, captar más reservas y convertir visitas en clientes con una experiencia clara desde celular.",
-    features: ["Botón de WhatsApp", "Módulo de reservas", "SEO local"],
-  },
-  {
-    name: "Spa Serenity",
-    category: "Spa",
-    href: "/demo/spa",
-    image:
-      "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1400&q=80",
-    shortDescription:
-      "Web elegante que transmite confianza y aumenta solicitudes de cita.",
-    longDescription:
-      "Página orientada a tratamientos premium con bloques de servicios, testimonios y llamadas a la acción para generar más conversiones en negocios de bienestar.",
-    features: ["Agenda por WhatsApp", "Sección de servicios", "Copy comercial"],
-  },
-  {
-    name: "Gym Performance",
-    category: "Gimnasio",
-    href: "/demo/gym",
-    image:
-      "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1400&q=80",
-    shortDescription:
-      "Sitio de alto impacto para captar leads de clases y planes mensuales.",
-    longDescription:
-      "Ejemplo de landing premium para gimnasios que necesitan más prospectos, mejor posicionamiento y una propuesta clara para convertir tráfico en membresías.",
-    features: [
-      "Formulario de contacto",
-      "Planes destacados",
-      "SEO para Google",
-    ],
-  },
-  {
-    name: "Barbería Clásica",
-    category: "Barbería",
-    href: "/demo/barberia",
-    image:
-      "https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=1400&q=80",
-    shortDescription:
-      "Imagen sólida de marca para barberías que buscan vender más citas.",
-    longDescription:
-      "Demo de páginas web para negocios de barbería con identidad visual fuerte, acceso rápido a WhatsApp y estructura enfocada en cerrar clientes desde móvil.",
-    features: ["Reserva rápida", "Galería de estilos", "Integración WhatsApp"],
-  },
-  {
-    name: "Beauty Studio",
-    category: "Belleza",
-    href: "/demo/beauty",
-    image:
-      "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=1400&q=80",
-    shortDescription:
-      "Diseño aspiracional para salones que quieren elevar su percepción premium.",
-    longDescription:
-      "Propuesta de diseño web profesional para marcas de belleza que desean posicionarse con autoridad, mostrar resultados y generar más consultas.",
-    features: ["Portafolio visual", "CTA de cotización", "Optimización mobile"],
-  },
-  {
-    name: "Clínica Dental Pro",
-    category: "Dental",
-    href: "/demo/dental",
-    image:
-      "https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=1400&q=80",
-    shortDescription:
-      "Web confiable para clínicas que quieren más citas agendadas.",
-    longDescription:
-      "Ejemplo pensado para clínicas odontológicas que necesitan transmitir seguridad, explicar procedimientos y aumentar conversiones con una experiencia simple.",
-    features: [
-      "Agenda de citas",
-      "Sección de tratamientos",
-      "SEO local profesional",
-    ],
-  },
-];
+type DemoItem = (typeof siteExamples.demos)[number];
 
 const buildWhatsappLink = (demoName: string) => {
-  const message = `Hola, quiero una página web para negocios similar al demo ${demoName}. Quiero una landing premium y diseño web profesional para mi marca.`;
+  const message = siteExamples.whatsappMessageTemplate.replace(
+    "{demoName}",
+    demoName,
+  );
   return `https://wa.me/${siteBanner.whatsappNumber}?text=${encodeURIComponent(message)}`;
 };
 
@@ -137,23 +49,21 @@ export function Examples() {
     >
       <div className="mx-auto max-w-3xl text-center">
         <p className="text-sm font-medium uppercase tracking-wider text-cyan-300">
-          Portafolio de demos
+          {siteExamples.label}
         </p>
         <h2 className="mt-4 text-balance text-3xl font-semibold tracking-tight text-white md:text-5xl">
-          Ejemplos de diseño premium
+          {siteExamples.title}
         </h2>
         <p className="mt-5 text-pretty text-base text-slate-300 md:text-lg">
-          Estos son demos creados para negocios reales. Tu web puede verse así o
-          mejor.
+          {siteExamples.subtitle}
         </p>
         <p className="mt-3 text-sm text-slate-400 md:text-base">
-          Creamos páginas web para negocios con enfoque en conversión, diseño
-          web profesional y landing premium optimizada para atraer clientes.
+          {siteExamples.secondarySubtitle}
         </p>
       </div>
 
       <div className="mt-14 grid grid-cols-1 gap-6 lg:grid-cols-3">
-        {demoItems.map((demo) => (
+        {siteExamples.demos.map((demo) => (
           <Card
             key={demo.href}
             role="button"
@@ -170,7 +80,7 @@ export function Examples() {
             <div className="relative h-52 w-full overflow-hidden">
               <Image
                 src={demo.image}
-                alt={`Demo ${demo.category}`}
+                alt={`${siteExamples.imageAltPrefix} ${demo.category}`}
                 fill
                 sizes="(min-width: 1024px) 33vw, 100vw"
                 quality={75}
@@ -192,7 +102,7 @@ export function Examples() {
               <ul className="space-y-2 text-sm text-slate-200">
                 {demo.features.map((feature) => (
                   <li key={`${demo.name}-${feature}`} className="flex gap-2">
-                    <span className="text-cyan-300">•</span>
+                    <span className="text-cyan-300">{siteUi.listBullet}</span>
                     <span>{feature}</span>
                   </li>
                 ))}
@@ -208,7 +118,7 @@ export function Examples() {
                     href={demo.href}
                     onClick={(event) => event.stopPropagation()}
                   >
-                    Ver Demo
+                    {siteExamples.buttons.viewDemo}
                   </Link>
                 </Button>
 
@@ -223,7 +133,7 @@ export function Examples() {
                     rel="noreferrer"
                     onClick={(event) => event.stopPropagation()}
                   >
-                    Quiero una web así
+                    {siteExamples.buttons.quoteSimilar}
                   </a>
                 </Button>
               </div>
@@ -234,11 +144,10 @@ export function Examples() {
 
       <div className="mt-16 rounded-2xl border border-cyan-400/30 bg-linear-to-r from-cyan-500/12 to-blue-500/12 p-8 text-center shadow-[0_16px_50px_rgba(15,23,42,0.45)]">
         <h3 className="text-2xl font-semibold text-white md:text-3xl">
-          ¿Quieres una web como estas?
+          {siteExamples.cta.title}
         </h3>
         <p className="mx-auto mt-3 max-w-2xl text-slate-300">
-          Te diseñamos una página a medida con estructura de venta, branding
-          sólido y enfoque de resultados para tu negocio.
+          {siteExamples.cta.description}
         </p>
         <Button
           asChild
@@ -246,7 +155,7 @@ export function Examples() {
           className="mt-6 min-w-64 text-base bg-cyan-600 hover:bg-cyan-700"
         >
           <a href={siteBanner.whatsappUrl} target="_blank" rel="noreferrer">
-            Cotizar por WhatsApp
+            {siteExamples.cta.buttonLabel}
           </a>
         </Button>
       </div>
@@ -274,9 +183,9 @@ export function Examples() {
                 type="button"
                 onClick={() => setActiveDemo(null)}
                 className="absolute right-3 top-3 rounded-md bg-slate-950/70 px-2.5 py-1 text-sm text-slate-100 transition hover:bg-slate-800"
-                aria-label="Cerrar detalle"
+                aria-label={siteExamples.modal.closeLabel}
               >
-                Cerrar
+                {siteExamples.modal.closeText}
               </button>
               <div className="absolute bottom-4 left-4 right-4">
                 <p className="text-xs font-semibold uppercase tracking-[0.16em] text-cyan-300/90">
@@ -294,14 +203,16 @@ export function Examples() {
               <ul className="space-y-2 text-sm text-slate-200">
                 {activeDemo.features.map((feature) => (
                   <li key={`modal-${activeDemo.name}-${feature}`}>
-                    • {feature}
+                    {siteUi.listBullet} {feature}
                   </li>
                 ))}
               </ul>
 
               <div className="flex flex-col gap-3 pt-2 sm:flex-row">
                 <Button asChild className="flex-1">
-                  <Link href={activeDemo.href}>Abrir demo</Link>
+                  <Link href={activeDemo.href}>
+                    {siteExamples.buttons.openDemo}
+                  </Link>
                 </Button>
                 <Button asChild variant="outline" className="flex-1">
                   <a
@@ -309,7 +220,7 @@ export function Examples() {
                     target="_blank"
                     rel="noreferrer"
                   >
-                    Cotizar por WhatsApp
+                    {siteExamples.buttons.quoteWhatsapp}
                   </a>
                 </Button>
               </div>

@@ -9,7 +9,19 @@ import {
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
-  const { brand, description, navItems, copyright } = footerData;
+  const { brand, description, navItems, socialLinks, copyright } = footerData;
+  const iconMap = {
+    FaWhatsapp,
+    FaInstagram,
+    FaFacebook,
+    FaXTwitter,
+  };
+  const hoverColorMap = {
+    FaWhatsapp: "hover:text-green-400",
+    FaInstagram: "hover:text-pink-400",
+    FaFacebook: "hover:text-blue-400",
+    FaXTwitter: "hover:text-cyan-400",
+  };
 
   return (
     <footer className="py-12 border-t border-slate-900/80 bg-[#05070c] text-slate-100">
@@ -26,42 +38,25 @@ export function Footer() {
             <p className="mt-2 text-sm text-slate-400">{description}</p>
             {/* Redes sociales */}
             <div className="flex gap-4 mt-4">
-              <a
-                href="https://wa.me/573142482943"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="WhatsApp"
-                className="text-slate-400 hover:text-green-400 transition-colors text-xl"
-              >
-                <FaWhatsapp />
-              </a>
-              <a
-                href="https://wa.me/573142482943"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram"
-                className="text-slate-400 hover:text-pink-400 transition-colors text-xl"
-              >
-                <FaInstagram />
-              </a>
-              <a
-                href="https://wa.me/573142482943"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Facebook"
-                className="text-slate-400 hover:text-blue-400 transition-colors text-xl"
-              >
-                <FaFacebook />
-              </a>
-              <a
-                href="https://wa.me/573142482943"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="X (Twitter)"
-                className="text-slate-400 hover:text-cyan-400 transition-colors text-xl"
-              >
-                <FaXTwitter />
-              </a>
+              {socialLinks.map((social) => {
+                const IconComponent =
+                  iconMap[social.icon as keyof typeof iconMap];
+                const hoverColor =
+                  hoverColorMap[social.icon as keyof typeof hoverColorMap];
+
+                return (
+                  <a
+                    key={social.label}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={social.label}
+                    className={`text-slate-400 ${hoverColor} transition-colors text-xl`}
+                  >
+                    <IconComponent />
+                  </a>
+                );
+              })}
             </div>
           </div>
 

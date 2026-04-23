@@ -1,17 +1,15 @@
 import { FaWhatsapp } from "react-icons/fa";
+import { siteBanner, siteWhatsappFloat } from "@/data/site";
 
-const whatsappNumber = "573142482943";
-const message = encodeURIComponent(
-  "Hola, vi tu página y quiero cotizar una página web.\n\nMi negocio es: \nCiudad: \nTengo WhatsApp Business: Sí/No\nTengo dominio: Sí/No\n\n¿Qué información adicional necesitas?",
-);
+const message = encodeURIComponent(siteWhatsappFloat.whatsappText);
 
 export function WhatsappFloat() {
   return (
     <a
-      href={`https://wa.me/${whatsappNumber}?text=${message}`}
+      href={`https://wa.me/${siteBanner.whatsappNumber}?text=${message}`}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="Contactar por WhatsApp"
+      aria-label={siteWhatsappFloat.ariaLabel}
       className="
         fixed bottom-6 right-6 z-50
         w-15 h-15

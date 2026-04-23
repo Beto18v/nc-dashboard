@@ -50,12 +50,12 @@ export function Header() {
             onClick={(e) => handleSmoothScroll(e, brand.href)}
           >
             <Image
-              src="/Logonobg.png"
-              alt="Nexval Logo"
-              width={112}
-              height={112}
+              src={brand.logo.src}
+              alt={brand.logo.alt}
+              width={brand.logo.width}
+              height={brand.logo.height}
               priority
-              sizes="112px"
+              sizes={brand.logo.sizes}
               className="h-28 w-auto mt-2"
             />
           </a>

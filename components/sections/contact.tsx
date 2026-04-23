@@ -14,6 +14,12 @@ export function Contact() {
     Mail,
     MessageCircle,
   };
+  const checklistIconMap = {
+    FaRegBuilding,
+    FaMapMarkerAlt,
+    FaRegStar,
+    FaRegCalendarCheck,
+  };
 
   return (
     <Section
@@ -62,7 +68,7 @@ export function Contact() {
               {/* Respuesta rápida */}
               <div className="flex items-center gap-2 text-cyan-300 text-sm font-medium mb-2">
                 <FaRegClock className="w-5 h-5" />
-                Respuesta en menos de 2 horas (horario laboral)
+                {siteContact.quickResponseText}
               </div>
               {/* Horario de atención */}
               <p className="text-sm text-center text-slate-400 pt-4 border-t border-slate-800/80">
@@ -74,26 +80,26 @@ export function Contact() {
             <div className="flex-1 mt-8 md:mt-0 md:max-w-md md:pl-8">
               <div className="bg-slate-900/80 rounded-lg p-4 border border-cyan-400/10">
                 <p className="font-semibold text-cyan-300 mb-2 flex items-center gap-2">
-                  <span className="text-lg">📋</span> Para cotizar más rápido,
-                  envíame:
+                  <span className="text-lg">{siteContact.quoteChecklist.icon}</span>
+                  {siteContact.quoteChecklist.title}
                 </p>
                 <ul className="space-y-3">
-                  <li className="flex items-center gap-2 text-slate-200/90">
-                    <FaRegBuilding className="w-5 h-5 text-cyan-400" />
-                    ¿A qué se dedica tu negocio?
-                  </li>
-                  <li className="flex items-center gap-2 text-slate-200/90">
-                    <FaMapMarkerAlt className="w-5 h-5 text-cyan-400" />
-                    ¿En qué ciudad te encuentras?
-                  </li>
-                  <li className="flex items-center gap-2 text-slate-200/90">
-                    <FaRegStar className="w-5 h-5 text-cyan-400" />
-                    Comparte un ejemplo de web que te guste
-                  </li>
-                  <li className="flex items-center gap-2 text-slate-200/90">
-                    <FaRegCalendarCheck className="w-5 h-5 text-cyan-400" />
-                    ¿Quieres reservas, citas o catálogo?
-                  </li>
+                  {siteContact.quoteChecklist.items.map((item) => {
+                    const IconComponent =
+                      checklistIconMap[
+                        item.icon as keyof typeof checklistIconMap
+                      ];
+
+                    return (
+                      <li
+                        key={item.text}
+                        className="flex items-center gap-2 text-slate-200/90"
+                      >
+                        <IconComponent className="w-5 h-5 text-cyan-400" />
+                        {item.text}
+                      </li>
+                    );
+                  })}
                 </ul>
               </div>
             </div>
@@ -101,8 +107,7 @@ export function Contact() {
         </div>
         {/* Frase de confianza */}
         <p className="text-sm text-amber-400 mt-10">
-          Si no sabes qué plan elegir, te recomendamos el ideal según tu
-          negocio.
+          {siteContact.confidenceText}
         </p>
       </div>
     </Section>

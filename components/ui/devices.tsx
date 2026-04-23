@@ -10,6 +10,7 @@ import {
 } from "react-icons/md";
 
 import { cn } from "@/lib/utils";
+import { siteDevicePreview } from "@/data/site";
 
 type DeviceKey = "desktop" | "laptop" | "tablet" | "phone";
 type FrameConfig = { w: number; h: number; r: number };
@@ -86,10 +87,26 @@ export function ResponsiveDeviceMorph({
   const shouldReduceMotion = useReducedMotion();
   const sequence = useMemo(
     () => [
-      { key: "desktop" as const, label: "PC", Icon: MdDesktopWindows },
-      { key: "laptop" as const, label: "Laptop", Icon: MdLaptopMac },
-      { key: "tablet" as const, label: "Tablet", Icon: MdTabletMac },
-      { key: "phone" as const, label: "Celular", Icon: MdPhoneIphone },
+      {
+        key: "desktop" as const,
+        label: siteDevicePreview.labels.desktop,
+        Icon: MdDesktopWindows,
+      },
+      {
+        key: "laptop" as const,
+        label: siteDevicePreview.labels.laptop,
+        Icon: MdLaptopMac,
+      },
+      {
+        key: "tablet" as const,
+        label: siteDevicePreview.labels.tablet,
+        Icon: MdTabletMac,
+      },
+      {
+        key: "phone" as const,
+        label: siteDevicePreview.labels.phone,
+        Icon: MdPhoneIphone,
+      },
     ],
     [],
   );

@@ -35,7 +35,7 @@ export function Process() {
                   {step.number}
                 </div>
                 <span className="mt-2 text-sm font-semibold text-cyan-200">
-                  Paso {step.number}
+                  {siteProcess.stepLabelPrefix} {step.number}
                 </span>
               </div>
               <Card className="w-full mt-4 border border-slate-800/80 bg-slate-900/60 transition-all duration-300">
@@ -54,8 +54,7 @@ export function Process() {
       </div>
       <div className="mt-6 text-center">
         <p className="text-base text-cyan-200 rounded-lg inline-block px-4 py-2 shadow-sm">
-          Tendrás avances y versión de prueba para que lo revises antes de
-          publicar.
+          {siteProcess.footerText}
         </p>
       </div>
     </Section>

@@ -23,7 +23,7 @@ export function Services() {
           {siteServices.title}
         </h2>
         <p className="mt-2 text-base font-medium text-cyan-200 bg-slate-800/60 rounded-lg inline-block px-4 py-2 shadow-sm">
-          Incluido en todos los planes, sin costos ocultos.
+          {siteServices.badge}
         </p>
       </div>
 
