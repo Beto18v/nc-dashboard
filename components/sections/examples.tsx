@@ -45,19 +45,19 @@ export function Examples() {
   return (
     <Section
       id={siteExamples.sectionId}
-      className="border-slate-800/80 bg-slate-900 text-slate-100"
+      className="border-stone-800/80 bg-stone-900 text-stone-100"
     >
       <div className="mx-auto max-w-3xl text-center">
-        <p className="text-sm font-medium uppercase tracking-wider text-cyan-300">
+        <p className="text-sm font-medium uppercase tracking-wider text-amber-300">
           {siteExamples.label}
         </p>
         <h2 className="mt-4 text-balance text-3xl font-semibold tracking-tight text-white md:text-5xl">
           {siteExamples.title}
         </h2>
-        <p className="mt-5 text-pretty text-base text-slate-300 md:text-lg">
+        <p className="mt-5 text-pretty text-base text-stone-300 md:text-lg">
           {siteExamples.subtitle}
         </p>
-        <p className="mt-3 text-sm text-slate-400 md:text-base">
+        <p className="mt-3 text-sm text-stone-400 md:text-base">
           {siteExamples.secondarySubtitle}
         </p>
       </div>
@@ -75,7 +75,7 @@ export function Examples() {
                 setActiveDemo(demo);
               }
             }}
-            className="group cursor-pointer overflow-hidden border border-slate-800 bg-slate-900/70 p-0 transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400/70 hover:shadow-[0_0_0_1px_rgba(34,211,238,0.35),0_20px_40px_rgba(15,23,42,0.65)]"
+            className="group cursor-pointer overflow-hidden border border-stone-800 bg-stone-900/70 p-0 transition-all duration-300 hover:-transtone-y-1 hover:border-amber-400/70 hover:shadow-[0_0_0_1px_rgba(34,211,238,0.35),0_20px_40px_rgba(15,23,42,0.65)]"
           >
             <div className="relative h-52 w-full overflow-hidden">
               <Image
@@ -85,9 +85,9 @@ export function Examples() {
                 sizes="(min-width: 1024px) 33vw, 100vw"
                 quality={75}
               />
-              <div className="absolute inset-0 bg-linear-to-t from-slate-950 via-slate-950/55 to-slate-950/15" />
+              <div className="absolute inset-0 bg-linear-to-t from-stone-950 via-stone-950/55 to-stone-950/15" />
               <div className="absolute bottom-4 left-4 right-4">
-                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-cyan-300/90">
+                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-amber-300/90">
                   {demo.category}
                 </p>
                 <h3 className="mt-2 text-xl font-semibold text-white">
@@ -97,12 +97,12 @@ export function Examples() {
             </div>
 
             <div className="space-y-5 px-5 pb-5 pt-4">
-              <p className="text-sm text-slate-300">{demo.shortDescription}</p>
+              <p className="text-sm text-stone-300">{demo.shortDescription}</p>
 
-              <ul className="space-y-2 text-sm text-slate-200">
+              <ul className="space-y-2 text-sm text-stone-200">
                 {demo.features.map((feature) => (
                   <li key={`${demo.name}-${feature}`} className="flex gap-2">
-                    <span className="text-cyan-300">{siteUi.listBullet}</span>
+                    <span className="text-amber-300">{siteUi.listBullet}</span>
                     <span>{feature}</span>
                   </li>
                 ))}
@@ -111,7 +111,7 @@ export function Examples() {
               <div className="flex flex-col gap-3 pt-1">
                 <Button
                   asChild
-                  className="w-full bg-fuchsia-700 hover:bg-fuchsia-950"
+                  className="w-full bg-amber-600 hover:bg-amber-700"
                   size="sm"
                 >
                   <Link
@@ -125,7 +125,7 @@ export function Examples() {
                 <Button
                   asChild
                   size="sm"
-                  className="w-full bg-indigo-700 hover:bg-indigo-950"
+                  className="w-full bg-orange-600 hover:bg-orange-700"
                 >
                   <a
                     href={buildWhatsappLink(demo.name)}
@@ -142,17 +142,17 @@ export function Examples() {
         ))}
       </div>
 
-      <div className="mt-16 rounded-2xl border border-cyan-400/30 bg-linear-to-r from-cyan-500/12 to-blue-500/12 p-8 text-center shadow-[0_16px_50px_rgba(15,23,42,0.45)]">
+      <div className="mt-16 rounded-2xl border border-amber-400/30 bg-linear-to-r from-amber-500/12 to-orange-500/12 p-8 text-center shadow-[0_16px_50px_rgba(15,23,42,0.45)]">
         <h3 className="text-2xl font-semibold text-white md:text-3xl">
           {siteExamples.cta.title}
         </h3>
-        <p className="mx-auto mt-3 max-w-2xl text-slate-300">
+        <p className="mx-auto mt-3 max-w-2xl text-stone-300">
           {siteExamples.cta.description}
         </p>
         <Button
           asChild
           size="lg"
-          className="mt-6 min-w-64 text-base bg-cyan-600 hover:bg-cyan-700"
+          className="mt-6 min-w-64 text-base bg-amber-600 hover:bg-amber-700"
         >
           <a href={siteBanner.whatsappUrl} target="_blank" rel="noreferrer">
             {siteExamples.cta.buttonLabel}
@@ -162,11 +162,11 @@ export function Examples() {
 
       {activeDemo ? (
         <div
-          className="fixed inset-0 z-100 flex items-end justify-center bg-slate-950/75 p-4 md:items-center"
+          className="fixed inset-0 z-100 flex items-end justify-center bg-stone-950/75 p-4 md:items-center"
           onClick={() => setActiveDemo(null)}
         >
           <div
-            className="w-full max-w-2xl rounded-2xl border border-slate-700 bg-slate-900 shadow-2xl"
+            className="w-full max-w-2xl rounded-2xl border border-stone-700 bg-stone-900 shadow-2xl"
             onClick={(event) => event.stopPropagation()}
           >
             <div className="relative h-52 w-full overflow-hidden rounded-t-2xl">
@@ -178,17 +178,17 @@ export function Examples() {
                 className="object-cover"
                 quality={75}
               />
-              <div className="absolute inset-0 bg-linear-to-t from-slate-950 via-slate-900/50 to-slate-950/10" />
+              <div className="absolute inset-0 bg-linear-to-t from-stone-950 via-stone-900/50 to-stone-950/10" />
               <button
                 type="button"
                 onClick={() => setActiveDemo(null)}
-                className="absolute right-3 top-3 rounded-md bg-slate-950/70 px-2.5 py-1 text-sm text-slate-100 transition hover:bg-slate-800"
+                className="absolute right-3 top-3 rounded-md bg-stone-950/70 px-2.5 py-1 text-sm text-stone-100 transition hover:bg-stone-800"
                 aria-label={siteExamples.modal.closeLabel}
               >
                 {siteExamples.modal.closeText}
               </button>
               <div className="absolute bottom-4 left-4 right-4">
-                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-cyan-300/90">
+                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-amber-300/90">
                   {activeDemo.category}
                 </p>
                 <p className="mt-1 text-2xl font-semibold text-white">
@@ -198,9 +198,9 @@ export function Examples() {
             </div>
 
             <div className="space-y-5 p-6">
-              <p className="text-slate-300">{activeDemo.longDescription}</p>
+              <p className="text-stone-300">{activeDemo.longDescription}</p>
 
-              <ul className="space-y-2 text-sm text-slate-200">
+              <ul className="space-y-2 text-sm text-stone-200">
                 {activeDemo.features.map((feature) => (
                   <li key={`modal-${activeDemo.name}-${feature}`}>
                     {siteUi.listBullet} {feature}

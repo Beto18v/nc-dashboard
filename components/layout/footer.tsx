@@ -17,25 +17,25 @@ export function Footer() {
     FaXTwitter,
   };
   const hoverColorMap = {
-    FaWhatsapp: "hover:text-green-400",
-    FaInstagram: "hover:text-pink-400",
-    FaFacebook: "hover:text-blue-400",
-    FaXTwitter: "hover:text-cyan-400",
+    FaWhatsapp: "hover:text-amber-400",
+    FaInstagram: "hover:text-amber-400",
+    FaFacebook: "hover:text-amber-400",
+    FaXTwitter: "hover:text-amber-400",
   };
 
   return (
-    <footer className="py-12 border-t border-slate-900/80 bg-[#05070c] text-slate-100">
+    <footer className="py-12 border-t border-stone-900/80 bg-[#05070c] text-stone-100">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
           <div>
             <Link
               href={brand.href}
-              className="text-lg font-semibold tracking-tight text-slate-100"
+              className="text-lg font-semibold tracking-tight text-stone-100"
             >
               {brand.name}
-              <span className="text-cyan-300">{brand.accent}</span>
+              <span className="text-amber-300">{brand.accent}</span>
             </Link>
-            <p className="mt-2 text-sm text-slate-400">{description}</p>
+            <p className="mt-2 text-sm text-stone-400">{description}</p>
             {/* Redes sociales */}
             <div className="flex gap-4 mt-4">
               {socialLinks.map((social) => {
@@ -51,7 +51,7 @@ export function Footer() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={social.label}
-                    className={`text-slate-400 ${hoverColor} transition-colors text-xl`}
+                    className={`text-stone-400 ${hoverColor} transition-colors text-xl`}
                   >
                     <IconComponent />
                   </a>
@@ -65,7 +65,7 @@ export function Footer() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-sm text-slate-400 hover:text-slate-100 transition-colors"
+                className="text-sm text-stone-400 hover:text-stone-100 transition-colors"
               >
                 {item.name}
               </Link>
@@ -73,8 +73,8 @@ export function Footer() {
           </nav>
         </div>
 
-        <div className="mt-10 pt-6 border-t border-slate-800/80 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-          <p className="text-sm text-slate-400">
+        <div className="mt-10 pt-6 border-t border-stone-800/80 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+          <p className="text-sm text-stone-400">
             © {currentYear} {brand.name}. {copyright.label}
           </p>
         </div>

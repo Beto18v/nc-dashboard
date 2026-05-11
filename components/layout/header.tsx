@@ -67,7 +67,7 @@ export function Header() {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-sm text-slate-200/90 hover:text-white transition-colors px-2 py-1 rounded-lg hover:bg-[rgba(56,189,248,0.12)]"
+                  className="text-sm text-stone-200/90 hover:text-white transition-colors px-2 py-1 rounded-lg hover:bg-[rgba(56,189,248,0.12)]"
                   onClick={(e) => handleSmoothScroll(e, item.href)}
                 >
                   {item.name}
@@ -78,10 +78,10 @@ export function Header() {
             <div className="flex items-center justify-end">
               <a
                 href={headerData.button.href}
-                className="px-5 py-2 rounded-lg shadow-lg bg-linear-to-r from-purple-600 via-indigo-500 to-blue-500 hover:from-purple-700 hover:via-indigo-600 hover:to-blue-600 text-white font-bold text-sm transition-all animate-pulse"
+                className="px-5 py-2 rounded-lg shadow-lg bg-linear-to-r from-amber-600 via-orange-500 to-rose-500 hover:from-amber-700 hover:via-orange-600 hover:to-rose-600 text-white font-bold text-sm transition-all animate-pulse"
                 style={{
                   letterSpacing: "0.01em",
-                  boxShadow: "0 0 16px 4px #7c3aed, 0 0 32px 8px #3b82f6",
+                  boxShadow: "0 0 16px 4px #d97706, 0 0 32px 8px #f97316",
                 }}
                 onClick={(e) => handleSmoothScroll(e, headerData.button.href)}
               >
@@ -93,7 +93,7 @@ export function Header() {
           {/* Mobile Menu Button */}
           <button
             type="button"
-            className="md:hidden p-2 text-slate-100 rounded-lg bg-[rgba(56,189,248,0.14)] hover:bg-[rgba(56,189,248,0.22)] transition-colors"
+            className="md:hidden p-2 text-stone-100 rounded-lg bg-[rgba(56,189,248,0.14)] hover:bg-[rgba(56,189,248,0.22)] transition-colors"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label={
               isMenuOpen ? mobileMenu.closeLabel : mobileMenu.openLabel
@@ -117,7 +117,7 @@ export function Header() {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-sm text-slate-100 hover:text-white transition-colors px-4 py-2 rounded-xl border border-[rgba(56,189,248,0.14)] bg-[rgba(56,189,248,0.08)] backdrop-blur-md hover:bg-[rgba(56,189,248,0.18)] shadow-sm"
+                  className="text-sm text-stone-100 hover:text-white transition-colors px-4 py-2 rounded-xl border border-[rgba(56,189,248,0.14)] bg-[rgba(56,189,248,0.08)] backdrop-blur-md hover:bg-[rgba(56,189,248,0.18)] shadow-sm"
                   style={{
                     WebkitBackdropFilter: "blur(8px)",
                     backdropFilter: "blur(8px)",
@@ -133,10 +133,10 @@ export function Header() {
               {/* Botón Planes y Precios Mobile */}
               <a
                 href={headerData.button.href}
-                className="w-full mt-2 px-8 py-2 rounded-lg shadow-lg bg-linear-to-r from-purple-600 via-indigo-500 to-blue-500 hover:from-purple-700 hover:via-indigo-600 hover:to-blue-600 text-white font-bold text-base transition-all animate-pulse text-center"
+                className="w-full mt-2 px-8 py-2 rounded-lg shadow-lg bg-linear-to-r from-amber-600 via-orange-500 to-rose-500 hover:from-amber-700 hover:via-orange-600 hover:to-rose-600 text-white font-bold text-base transition-all animate-pulse text-center"
                 style={{
                   letterSpacing: "0.01em",
-                  boxShadow: "0 0 16px 4px #7c3aed, 0 0 32px 8px #3b82f6",
+                  boxShadow: "0 0 16px 4px #d97706, 0 0 32px 8px #f97316",
                 }}
                 onClick={(e) => {
                   handleSmoothScroll(e, headerData.button.href);
