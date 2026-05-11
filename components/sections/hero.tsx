@@ -7,10 +7,10 @@ import { siteHero, companyName } from "@/data/site";
 
 import { ArrowRight } from "lucide-react";
 import {
+  MdSmartToy,
   MdWhatsapp,
-  MdFlashOn,
   MdAttachMoney,
-  MdLocationOn,
+  MdFlashOn,
 } from "react-icons/md";
 
 export function Hero() {
@@ -98,10 +98,10 @@ export function Hero() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
           {siteHero.stats.map((stat, idx) => {
             const icons = {
+              MdSmartToy: MdSmartToy,
               MdWhatsapp: MdWhatsapp,
-              MdFlashOn: MdFlashOn,
               MdAttachMoney: MdAttachMoney,
-              MdLocationOn: MdLocationOn,
+              MdFlashOn: MdFlashOn,
             };
             const IconComponent = icons[stat.icon as keyof typeof icons];
             return (

@@ -18,6 +18,22 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: siteMetadata.title,
   description: siteMetadata.description,
+  robots: {
+    index: true,
+    follow: true,
+  },
+  openGraph: {
+    title: siteMetadata.title,
+    description: siteMetadata.description,
+    locale: "es_CO",
+    siteName: "NuncaCierro",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteMetadata.title,
+    description: siteMetadata.description,
+  },
 };
 
 export default function RootLayout({

@@ -1,13 +1,13 @@
 import { siteServices } from "@/data/site";
 import { Section } from "@/components/layout/section";
-import { Code, Zap, Globe } from "lucide-react";
+import { Bot, Sparkles, LayoutDashboard } from "lucide-react";
 import { Card, CardContent, CardTitle } from "@/components/ui/card";
 
 export function Services() {
   const iconMap = {
-    Code,
-    Zap,
-    Globe,
+    Bot,
+    Sparkles,
+    LayoutDashboard,
   };
 
   return (

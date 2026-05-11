@@ -5,7 +5,7 @@ import { Contact } from "@/components/sections/contact";
 import { Examples } from "@/components/sections/examples";
 import { Faq } from "@/components/sections/faq";
 import { Hero } from "@/components/sections/hero";
-import { Pricing } from "@/components/sections/pricing";
+import { Plans } from "@/components/sections/plans";
 import { Process } from "@/components/sections/process";
 import { Services } from "@/components/sections/services";
 import { Banner } from "@/components/ui/banner";
@@ -19,7 +19,7 @@ export default function Home() {
       <Services />
       <Process />
       <Examples />
-      <Pricing />
+      <Plans />
       <Faq />
       <Contact />
       <WhatsappFloat />

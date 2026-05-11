@@ -1,65 +1,67 @@
-// Nombre de la empresa para uso destacado con gradiente
-export const companyName = "NEXVAL";
+// Nombre de la marca
+export const companyName = "NuncaCierro";
 
 export const siteMetadata = {
   lang: "es",
-  title: "Desarrollo de sitios web",
+  title:
+    "NuncaCierro | Automatización WhatsApp para negocios en Colombia",
   description:
-    "Desarrollo web de servicios para negocios modernos. Creamos sitios web rápidos, responsivos y optimizados para SEO, adaptados a tus necesidades.",
+    "Automatizamos tu WhatsApp para que respondas, agendes citas y vendas 24/7. Tu negocio nunca cierra. Ideal para restaurantes, clínicas, barberías, tiendas y más.",
+  keywords:
+    "automatización WhatsApp Colombia, chatbot WhatsApp negocio, atender WhatsApp automáticamente, bot WhatsApp pequeña empresa, agendar citas WhatsApp, leads WhatsApp automático, nunca perder clientes WhatsApp, responder WhatsApp sin estar pendiente",
   preconnectUrls: ["https://images.unsplash.com"],
 };
 
 export const siteBanner = {
-  message: "🚀 Recibe más clientes por WhatsApp esta semana",
-  messageMobile: "🚀 Más clientes por WhatsApp esta semana",
+  message: "🤖 Atiende clientes 24/7 aunque estés durmiendo",
+  messageMobile: "🤖 Atiende clientes 24/7",
   whatsappNumber: "573142482943",
   whatsappText:
-    "Hola, quiero conseguir más clientes por WhatsApp con una página simple para mi negocio.\nMi negocio es: ->\nEstoy ubicado en: ->\nMi objetivo este mes es: ->",
+    "Hola, quiero automatizar mi negocio con NuncaCierro.\n\nMi negocio es: ->\nEstoy ubicado en: ->\nMi mayor problema con los clientes es: ->",
   get whatsappUrl() {
     return `https://wa.me/${this.whatsappNumber}?text=${encodeURIComponent(this.whatsappText)}`;
   },
-  buttonLabel: "Quiero más clientes",
-  buttonLabelMobile: "Más clientes",
+  buttonLabel: "Quiero automatizar mi negocio",
+  buttonLabelMobile: "Automatizar",
 };
 
 // Hero section data
 export const siteHero = {
   sectionId: "inicio",
-  // Usa companyName en el título para destacar con gradiente en el componente
-  title: "Consigue más clientes sin pagar publicidad con " + companyName,
+  title: "Atiende clientes 24/7 aunque estés durmiendo o cerrado con " + companyName,
   subtitle:
-    "Te ayudo a tener una página simple que lleva a tus clientes directo a WhatsApp para que te escriban, te pregunten y compren más rápido.",
+    "Automatizamos tu WhatsApp para que nunca pierdas un cliente. Responde preguntas, agenda citas y vende automáticamente — incluso cuando no estás.",
   cta: {
     primary: {
-      label: "Quiero más clientes",
-      href: "https://wa.me/573142482943?text=Hola%2C%20quiero%20m%C3%A1s%20clientes%20por%20WhatsApp%20para%20mi%20negocio.%20%C2%BFC%C3%B3mo%20empezamos%3F",
+      label: "Quiero automatizar mi negocio",
+      href: "https://wa.me/573142482943?text=Hola%2C%20quiero%20automatizar%20mi%20negocio%20con%20NuncaCierro.",
     },
     secondary: {
-      label: "Ver cómo funciona",
-      href: "#proceso",
+      label: "Ver servicios",
+      href: "#servicios",
     },
   },
   disclaimer: [
-    "✔ Simple y fácil de vender",
-    "✔ Enfoque en mensajes y ventas",
-    "✔ Sin complicarte con tecnología",
+    "✔ Responde automáticamente 24/7",
+    "✔ Nunca pierdas un cliente",
+    "✔ Sin conocimientos técnicos",
   ],
   stats: [
     {
-      icon: "MdWhatsapp",
-      title: "Más clientes",
+      icon: "MdSmartToy",
+      title: "24/7 Automático",
     },
     {
-      icon: "MdFlashOn",
-      title: "Más mensajes",
+      icon: "MdWhatsapp",
+      title: "Más clientes",
     },
     {
       icon: "MdAttachMoney",
       title: "Más ventas",
     },
     {
-      icon: "MdLocationOn",
-      title: "Ubicación y contacto",
+      icon: "MdFlashOn",
+      title: "Sin esfuerzo",
     },
   ],
 };
@@ -77,26 +79,26 @@ export const siteDevicePreview = {
 export const siteServices = {
   sectionId: "servicios",
   label: "Servicios",
-  title: "Un servicio simple para conseguir más clientes por WhatsApp",
-  badge: "Incluido en todos los planes, sin costos ocultos.",
+  title: "Tu negocio atendiendo clientes sin que estés pendiente del celular",
+  badge: "Sin conocimientos técnicos. Nosotros configuramos todo.",
   services: [
     {
-      icon: "Code",
-      title: "Captación de clientes",
+      icon: "Bot",
+      title: "Bot WhatsApp",
       description:
-        "Creamos una oferta clara para que las personas interesadas te escriban por WhatsApp y pidan información de inmediato.",
+        "Responde automáticamente cuando preguntan por horarios, precios o ubicación. Atiende clientes aunque estés durmiendo, en reunión o de día libre. El cliente escribe 'menú' y recibe el catálogo al instante.",
     },
     {
-      icon: "Zap",
-      title: "Página optimizada para convertir",
+      icon: "Sparkles",
+      title: "Asistente Inteligente",
       description:
-        "Diseñamos una página simple, directa y enfocada en que cada visita se convierta en mensaje y posible venta.",
+        "Agenda citas automáticas sin estar preguntando 'qué día te queda bien'. El bot hace seguimiento a leads que se enfriaron y recuerda citas automáticamente para que menos gente se desconecte.",
     },
     {
-      icon: "Globe",
-      title: "Integración directa con WhatsApp",
+      icon: "LayoutDashboard",
+      title: "Sistema Completo",
       description:
-        "Todo queda preparado para que tus clientes te contacten en un clic, sin formularios largos ni pasos innecesarios.",
+        "Landing page profesional con tu marca + automatización completa de WhatsApp. Dashboard para ver cuántos leads entraron, cuántos compraron y encuestas automáticas después de cada venta.",
     },
   ],
 };
@@ -107,34 +109,28 @@ export const siteProcess = {
   label: "Proceso",
   title: "Así de simple empezamos",
   subtitle:
-    "Cuatro pasos claros para que empieces a recibir más clientes lo antes posible.",
+    "Tres pasos claros para que tu negocio empiece a atender 24/7.",
   stepLabelPrefix: "Paso",
   footerText:
-    "Tendrás avances y versión de prueba para que lo revises antes de publicar.",
+    "Te mostramos avances y una versión de prueba antes de activar.",
   steps: [
     {
       number: "01",
-      title: "Analizo tu negocio",
+      title: "Analizamos tu negocio",
       description:
-        "Revisamos qué vendes, a quién le vendes y qué tipo de clientes quieres atraer.",
+        "Vemos qué preguntas recibes siempre, qué horario manejas y qué necesita automatizar tu negocio.",
     },
     {
       number: "02",
-      title: "Te muestro una demo",
+      title: "Configuramos el bot",
       description:
-        "Te presento una propuesta simple para que veas cómo llegaría la gente a tu WhatsApp.",
+        "Personalizamos las respuestas, conectamos tu WhatsApp y dejamos todo listo para que empiece a funcionar.",
     },
     {
       number: "03",
-      title: "Lo activamos",
+      title: "Empiezas a recibir clientes 24/7",
       description:
-        "Hacemos los ajustes finales y dejamos tu página lista para empezar a generar contactos.",
-    },
-    {
-      number: "04",
-      title: "Empiezas a recibir mensajes",
-      description:
-        "Tu negocio queda visible y preparado para que más personas te escriban por WhatsApp.",
+        "Tu negocio nunca cierra. Los clientes te escriben, el bot responde y tú solo te encargas de vender.",
     },
   ],
 };
@@ -142,12 +138,12 @@ export const siteProcess = {
 // Header data layout
 export const headerData = {
   brand: {
-    name: "Nexval",
+    name: "NuncaCierro",
     accent: "",
     href: "/",
     logo: {
       src: "/Logonobg.png",
-      alt: "Nexval Logo",
+      alt: "NuncaCierro Logo",
       width: 112,
       height: 112,
       sizes: "112px",
@@ -156,7 +152,7 @@ export const headerData = {
   navItems: [
     { name: "Inicio", href: "#inicio" },
     { name: "Servicios", href: "#servicios" },
-    { name: "Proceso", href: "#proceso" },
+    { name: "Planes", href: "#planes" },
     { name: "Ejemplos", href: "#ejemplos" },
     { name: "Contacto", href: "#contacto" },
   ],
@@ -165,25 +161,24 @@ export const headerData = {
     closeLabel: "Cerrar menú",
   },
   button: {
-    label: "Ver planes",
-    href: "#precios",
+    label: "Asesoría gratis",
+    href: "#contacto",
   },
 };
 
 // Footer data layout
 export const footerData = {
   brand: {
-    name: "Nexval",
+    name: "NuncaCierro",
     accent: ".",
     href: "/",
   },
-  description: "Más clientes por WhatsApp para negocios.",
+  description: "Automatización WhatsApp para negocios en Colombia.",
   navItems: [
     { name: "Inicio", href: "#inicio" },
     { name: "Servicios", href: "#servicios" },
-    { name: "Proceso", href: "#proceso" },
+    { name: "Planes", href: "#planes" },
     { name: "Ejemplos", href: "#ejemplos" },
-    { name: "Precios", href: "#precios" },
     { name: "Contacto", href: "#contacto" },
   ],
   socialLinks: [
@@ -225,16 +220,16 @@ export const footerData = {
 export const siteExamples = {
   sectionId: "ejemplos",
   label: "Ejemplos",
-  title: "Así podría verse tu sitio web",
-  subtitle: "Estos son ejemplos de páginas premium.",
+  title: "Así funciona con cada negocio",
+  subtitle: "Cada demo incluye página web profesional + automatización por WhatsApp.",
   secondarySubtitle:
-    "Creamos páginas web para negocios con  enfoque en conversión, diseño web profesional y landing optimizada para atraer clientes.",
+    "Combinamos diseño web con automatización inteligente para que cada negocio atienda 24/7 y nunca pierda un cliente.",
   imageAltPrefix: "Demo",
   whatsappMessageTemplate:
-    "Hola, quiero una página web para negocios similar al demo {demoName}. Quiero una landing premium y diseño web profesional para mi marca.",
+    "Hola, quiero una página + automatización similar al demo {demoName}. Quiero que mi negocio atienda 24/7.",
   buttons: {
     viewDemo: "Ver Demo",
-    quoteSimilar: "Quiero una web así",
+    quoteSimilar: "Quiero una así",
     openDemo: "Abrir demo",
     quoteWhatsapp: "Cotizar por WhatsApp",
   },
@@ -243,9 +238,9 @@ export const siteExamples = {
     closeText: "Cerrar",
   },
   cta: {
-    title: "¿Quieres una web como estas?",
+    title: "¿Quieres una solución como estas?",
     description:
-      "Te diseñamos una página a medida con estructura de venta, branding sólido y enfoque de resultados para tu negocio.",
+      "Te diseñamos una página con automatización WhatsApp a medida, con estructura de venta y branding sólido para que tu negocio nunca cierre.",
     buttonLabel: "Cotizar por WhatsApp",
   },
   demos: [
@@ -256,10 +251,10 @@ export const siteExamples = {
       image:
         "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1400&q=80",
       shortDescription:
-        "Landing premium para reservas y pedidos directos por WhatsApp.",
+        "Landing premium + bot para reservas y pedidos directos por WhatsApp 24/7.",
       longDescription:
-        "Diseño web profesional para restaurantes que quieren verse exclusivos, captar más reservas y convertir visitas en clientes con una experiencia clara desde celular.",
-      features: ["Botón de WhatsApp", "Módulo de reservas", "SEO local"],
+        "Restaurante que atiende reservas automáticamente por WhatsApp, muestra el menú con solo pedirlo y capta clientes incluso cuando está cerrado.",
+      features: ["Bot de reservas 24/7", "Menú automático por WhatsApp", "Landing profesional"],
     },
     {
       name: "Spa Serenity",
@@ -268,14 +263,10 @@ export const siteExamples = {
       image:
         "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1400&q=80",
       shortDescription:
-        "Web elegante que transmite confianza y aumenta solicitudes de cita.",
+        "Web elegante + bot que agenda citas y hace seguimiento automático de clientes.",
       longDescription:
-        "Página orientada a tratamientos premium con bloques de servicios, testimonios y llamadas a la acción para generar más conversiones en negocios de bienestar.",
-      features: [
-        "Agenda por WhatsApp",
-        "Sección de servicios",
-        "Copy comercial",
-      ],
+        "Spa que agenda citas sin que la dueña esté pendiente, envía recordatorios automáticos y recupera clientes que preguntaron y no volvieron.",
+      features: ["Agenda automática por WhatsApp", "Recordatorios de citas", "Landing elegante"],
     },
     {
       name: "Gym Performance",
@@ -284,14 +275,10 @@ export const siteExamples = {
       image:
         "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1400&q=80",
       shortDescription:
-        "Sitio de alto impacto para captar leads de clases y planes mensuales.",
+        "Sitio de alto impacto + bot que capta leads y responde planes automáticamente.",
       longDescription:
-        "Ejemplo de landing premium para gimnasios que necesitan más prospectos, mejor posicionamiento y una propuesta clara para convertir tráfico en membresías.",
-      features: [
-        "Formulario de contacto",
-        "Planes destacados",
-        "SEO para Google",
-      ],
+        "Gimnasio que responde automáticamente precios y horarios, capta leads fuera de horario y agenda visitas de prueba sin intervención.",
+      features: ["Captación de leads 24/7", "Planes automáticos por WhatsApp", "SEO para Google"],
     },
     {
       name: "Barbería Clásica",
@@ -300,14 +287,10 @@ export const siteExamples = {
       image:
         "https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=1400&q=80",
       shortDescription:
-        "Imagen sólida de marca para barberías que buscan vender más citas.",
+        "Imagen sólida de marca + bot que agenda turnos y recuerda citas automáticamente.",
       longDescription:
-        "Demo de páginas web para negocios de barbería con identidad visual fuerte, acceso rápido a WhatsApp y estructura enfocada en cerrar clientes desde móvil.",
-      features: [
-        "Reserva rápida",
-        "Galería de estilos",
-        "Integración WhatsApp",
-      ],
+        "Barbería que agenda turnos por WhatsApp sin que el barbero tenga que dejar de trabajar, envía recordatorios y recupera clientes perdidos.",
+      features: ["Agenda de turnos automática", "Recordatorios por WhatsApp", "Landing de marca"],
     },
     {
       name: "Beauty Studio",
@@ -316,14 +299,10 @@ export const siteExamples = {
       image:
         "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=1400&q=80",
       shortDescription:
-        "Diseño aspiracional para salones que quieren elevar su percepción premium.",
+        "Diseño aspiracional + bot que califica leads y agenda citas automáticamente.",
       longDescription:
-        "Propuesta de diseño web profesional para marcas de belleza que desean posicionarse con autoridad, mostrar resultados y generar más consultas.",
-      features: [
-        "Portafolio visual",
-        "CTA de cotización",
-        "Optimización mobile",
-      ],
+        "Salón de belleza que califica clientes automáticamente, agenda citas y envía promociones sin que la dueña tenga que estar al teléfono.",
+      features: ["Calificación automática de leads", "Agenda inteligente", "Landing premium"],
     },
     {
       name: "Clínica Dental Pro",
@@ -332,179 +311,82 @@ export const siteExamples = {
       image:
         "https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=1400&q=80",
       shortDescription:
-        "Web confiable para clínicas que quieren más citas agendadas.",
+        "Web confiable + bot que agenda citas y hace seguimiento post-consulta.",
       longDescription:
-        "Ejemplo pensado para clínicas odontológicas que necesitan transmitir seguridad, explicar procedimientos y aumentar conversiones con una experiencia simple.",
-      features: [
-        "Agenda de citas",
-        "Sección de tratamientos",
-        "SEO local profesional",
-      ],
+        "Clínica dental que agenda citas automáticamente, envía recordatorios y hace seguimiento post-consulta para mejorar la experiencia del paciente.",
+      features: ["Agenda de citas automática", "Seguimiento post-consulta", "SEO local"],
     },
   ],
 };
 
-// Pricing section data
-export const sitePricing = {
-  sectionId: "precios",
-  label: "Precios",
-  title: "Planes claros para empezar hoy",
+// Plans section data (sin precios)
+export const sitePlans = {
+  sectionId: "planes",
+  label: "Planes",
+  title: "Elige el plan según lo que necesite tu negocio",
   subtitle:
-    "Elige el plan según tu momento. Todos están enfocados en ayudarte a recibir más clientes por WhatsApp.",
-  whatsappBaseUrl: "https://wa.me/573142482943?text=Me interesa el plan ",
+    "Todos incluyen configuración completa y soporte. Sin contratos largos. Cancela cuando quieras.",
+  whatsappBaseUrl: "https://wa.me/573142482943?text=",
   buttonText: "Quiero este plan",
   cardLabels: {
     default: "Plan",
     featured: "Plan recomendado",
-    featuredBadge: "Más vendido",
+    featuredBadge: "Más elegido",
   },
   footerText:
-    "Precios de entrada para negocios locales. Podemos ajustarlo según lo que necesites.",
+    "Todos los planes se facturan mensualmente. Podemos ajustar el alcance según lo que necesites.",
   guaranteeText:
-    "Si no te gusta el diseño inicial, lo ajustamos hasta que te encante.",
+    "Prueba el primer mes sin riesgo. Si no te gusta, lo cancelas y listo.",
   packages: [
     {
-      name: "Básico",
-      price: "Desde $150.000 COP",
+      name: "Bot WhatsApp",
       description:
-        "Ideal para probar una página simple y empezar a recibir mensajes.",
+        "Automatiza las preguntas frecuentes y no pierdas clientes nunca más.",
       features: [
-        "Página simple",
-        "Botón WhatsApp",
-        "Mensaje claro para vender",
-        "Ideal para probar",
+        "Responde automáticamente preguntas frecuentes",
+        "Captura leads fuera de horario",
+        "Catálogo interactivo automático",
+        "Mensaje de bienvenida personalizado",
+        "Configuración en 48 horas",
       ],
       featured: false,
     },
     {
-      name: "Profesional",
-      price: "Desde $270.000 COP",
+      name: "Asistente Inteligente",
       description:
-        "Para negocios que quieren más contactos y más oportunidades.",
+        "Agenda citas, haz seguimientos y automatiza todo tu WhatsApp.",
       features: [
-        "Mejor diseño",
-        "Optimización de mensajes",
-        "Más secciones",
-        "Integración directa con WhatsApp",
-        "Ideal para captar más clientes",
+        "Todo lo del Bot WhatsApp",
+        "Agenda de citas automática (Google Calendar)",
+        "Seguimiento automático de leads",
+        "Recordatorios de citas por WhatsApp",
+        "Estadísticas básicas semanales",
       ],
       featured: true,
     },
     {
-      name: "Premium",
-      price: "Desde $500.000 COP",
+      name: "Sistema Completo",
       description:
-        "Para negocios que quieren una solución completa y acompañamiento.",
+        "Solución integral: web profesional + automatización completa.",
       features: [
-        "Todo completo",
-        "Soporte",
-        "Optimización",
-        "Más enfoque en ventas por WhatsApp",
-        "Ajustes para mejorar resultados",
+        "Todo lo del Asistente Inteligente",
+        "Landing page profesional con tu marca",
+        "Dashboard de métricas en vivo",
+        "Encuestas de satisfacción automáticas",
+        "Soporte prioritario 24/7",
+        "Reportes semanales de resultados",
       ],
       featured: false,
     },
   ],
-  comparison: {
-    title: "¿Qué incluye cada plan?",
-    subtitle:
-      "Compara rápidamente el alcance y toma una decisión con claridad.",
-    includedLabel: "Incluye",
-    positiveLabel: "✔",
-    negativeLabel: "—",
-    rows: [
-      {
-        item: "Página simple y responsive",
-        included: [true, true, true],
-      },
-      {
-        item: "Botón WhatsApp integrado",
-        included: [true, true, true],
-      },
-      {
-        item: "Mensaje claro para vender",
-        included: [true, true, true],
-      },
-      {
-        item: "Optimización de mensajes",
-        included: [false, true, true],
-      },
-      {
-        item: "Más secciones",
-        included: [false, true, true],
-      },
-      {
-        item: "Acompañamiento y ajustes para mejorar resultados",
-        included: [false, false, true],
-      },
-    ],
-  },
-  optionalExtras: {
-    title: "Extras opcionales para potenciar tu negocio",
-    subtitle: "Puedes agregarlos ahora o más adelante",
-    itemLabel: "Complemento opcional",
-    buttonText: "Agregar a mi plan",
-    whatsappTextTemplate:
-      "Hola, me interesa el extra {extraName}. Quisiera más información y el precio final.",
-    items: [
-      {
-        name: "Dominio + Hosting Gestionado",
-        icon: "🌐",
-        description:
-          "Asegura una base técnica confiable para que tu web se vea profesional desde el primer día.",
-        includes: [
-          "Dominio (.com o .com.co) + hosting rápido con SSL",
-          "Configuración completa para salir en línea sin fricción",
-          "Soporte básico inicial para acompañar el arranque",
-        ],
-        price: "Desde $250.000 COP / año",
-      },
-      {
-        name: "Mantenimiento y Soporte Mensual",
-        icon: "🛠️",
-        description:
-          "Mantén tu sitio actualizado, seguro y ágil sin distraerte de la operación del negocio.",
-        includes: [
-          "Cambios pequeños de contenido cuando lo necesites",
-          "Actualizaciones y seguridad para una web estable",
-          "Soporte por WhatsApp con ajustes rápidos",
-        ],
-        price: "Desde $150.000 COP / mes",
-      },
-      {
-        name: "Pack de Reels Publicitarios (Instagram/TikTok)",
-        icon: "🎬",
-        description:
-          "Contenido corto pensado para captar atención y reforzar tu presencia comercial en redes.",
-        includes: [
-          "3 a 5 videos verticales (15-30 segundos)",
-          "Producción rápida con herramientas modernas (IA + edición)",
-          "Texto promocional y edición dinámica lista para publicar",
-        ],
-        price: "Desde $450.000 COP",
-      },
-      {
-        name: "Pack de Contenido para Redes Sociales",
-        icon: "📣",
-        description:
-          "Publica con más consistencia y una imagen de marca clara para mejorar tu comunicación.",
-        includes: [
-          "10 diseños de posts listos para usar",
-          "5 historias (stories) en formato de alto impacto",
-          "Estilo de marca y textos listos para publicar",
-        ],
-        price: "Desde $350.000 COP",
-      },
-    ],
-  },
   advisoryCta: {
     title:
-      "Agenda una asesoría gratis por WhatsApp y te decimos qué plan te conviene.",
+      "¿No sabes qué plan elegir? Te orientamos sin compromiso.",
     description:
-      "Te orientamos sin compromiso para que inviertas de forma inteligente y con objetivos claros.",
+      "Te mostramos cómo funciona cada plan y te recomendamos el ideal para tu negocio.",
     buttonText: "Agendar asesoría gratis",
     whatsappText:
-      "Hola, quiero agendar una asesoría gratis para saber qué plan web me conviene para mi negocio.",
+      "Hola, quiero agendar una asesoría gratis para saber qué plan de automatización me conviene para mi negocio.",
   },
 };
 
@@ -512,39 +394,49 @@ export const sitePricing = {
 export const siteFaq = {
   sectionId: "faq",
   label: "Preguntas frecuentes",
-  title: "Resolvemos tus dudas antes de empezar",
+  title: "Todo lo que necesitas saber antes de empezar",
   subtitle:
-    "Estas respuestas te ayudan a tomar una decisión informada y segura.",
+    "Respondemos tus dudas para que tomes la mejor decisión sin vueltas.",
   items: [
     {
-      question: "¿Cuánto tarda la entrega?",
+      question: "¿Qué pasa con mi WhatsApp cuando configuran el bot? ¿Dejo de recibir mensajes?",
       answer:
-        "Depende del plan y de la rapidez con la que recibamos tu información. En promedio, Básico se entrega más rápido y Profesional/Premium requieren más iteraciones estratégicas.",
+        "No, todo lo contrario. Sigues recibiendo mensajes normal. El bot solo responde automáticamente preguntas frecuentes y fuera de horario. Cuando estés disponible, tomas el control cuando quieras.",
     },
     {
-      question: "¿Incluye dominio y hosting?",
+      question: "¿El bot entiende lo que los clientes preguntan?",
       answer:
-        "No están incluidos por defecto para que mantengas el control total de tus cuentas, pero podemos gestionarlo por ti como extra opcional.",
+        "Sí, configuramos respuestas inteligentes para las preguntas más comunes de tu negocio: horarios, precios, ubicación, disponibilidad. Si alguien pregunta algo que el bot no sabe, te lo reenvía a ti.",
     },
     {
-      question: "¿Puedo pagar por cuotas?",
+      question: "¿Puedo personalizar las respuestas?",
       answer:
-        "Sí. Podemos definir un esquema por etapas del proyecto para que avances con comodidad y claridad.",
+        "Sí, tú defines los mensajes. Te damos una base y la ajustamos contigo hasta que suene exactamente como quieres. Con el tiempo puedes cambiarlas cuando quieras.",
     },
     {
-      question: "¿Qué pasa si quiero agregar más secciones?",
+      question: "¿Cuánto tiempo toma tenerlo listo?",
       answer:
-        "Lo podemos ampliar en cualquier momento. Te compartimos una propuesta adicional según el alcance nuevo.",
+        "El Bot WhatsApp lo configuramos en 48 horas hábiles. Los planes más avanzados pueden tomar hasta una semana, dependiendo de la landing page.",
     },
     {
-      question: "¿Puedo pedir cambios después de la entrega?",
+      question: "¿Necesito conocimientos técnicos para usarlo?",
       answer:
-        "Sí. Cada plan incluye rondas de cambios y, luego de eso, puedes solicitar ajustes adicionales o contratar mantenimiento.",
+        "Para nada. Nosotros configuramos todo. Tú solo tienes que revisar los mensajes que te lleguen. Si necesitas cambiar algo, nos avisas y lo ajustamos.",
     },
     {
-      question: "¿Incluye posicionamiento en Google?",
+      question: "¿Puedo cancelar cuando quiera?",
       answer:
-        "Todos los planes salen con una base optimizada. En Profesional trabajamos SEO básico y en Premium una optimización SEO avanzada inicial.",
+        "Sí, no hay contratos largos. Cancelas cuando quieras sin penalización. Obviamente esperamos que te quedes porque los resultados hablan solos.",
+    },
+    {
+      question: "¿Cómo sé cuántos clientes me contactaron?",
+      answer:
+        "En el plan Asistente Inteligente te enviamos estadísticas básicas semanales. En el Sistema Completo tienes un dashboard en vivo con métricas detalladas.",
+    },
+    {
+      question: "¿Funciona para cualquier tipo de negocio?",
+      answer:
+        "Funciona para cualquier negocio que reciba consultas por WhatsApp: restaurantes, clínicas, barberías, tiendas, talleres, gimnasios, spas, dentistas. Si tu negocio recibe mensajes, te sirve.",
     },
   ],
 };
@@ -555,7 +447,7 @@ export const siteContact = {
   label: "Contacto",
   title: "Hablemos de tu negocio",
   subtitle:
-    "Hablemos y te muestro cómo podrías recibir más clientes esta misma semana.",
+    "Cuéntanos qué necesitas y te mostramos cómo la automatización puede ayudarte a no perder más clientes.",
   contacts: [
     {
       icon: "Mail",
@@ -572,8 +464,8 @@ export const siteContact = {
   ],
   quickResponseText: "Respuesta en menos de 2 horas (horario laboral)",
   quoteChecklist: {
-    icon: "📋",
-    title: "Para cotizar más rápido, envíame:",
+    icon: "🤖",
+    title: "Para ayudarte más rápido, cuéntanos:",
     items: [
       {
         icon: "FaRegBuilding",
@@ -581,27 +473,27 @@ export const siteContact = {
       },
       {
         icon: "FaMapMarkerAlt",
-        text: "¿En qué ciudad te encuentras?",
+        text: "¿En qué ciudad estás?",
       },
       {
         icon: "FaRegStar",
-        text: "Comparte un ejemplo de web que te guste",
+        text: "¿Qué preguntas recibes siempre por WhatsApp?",
       },
       {
         icon: "FaRegCalendarCheck",
-        text: "¿Quieres reservas, citas o catálogo?",
+        text: "¿Quieres agenda automática, catálogo o seguimiento?",
       },
     ],
   },
   footerText: "Te respondemos de lunes a viernes, de 9:00 a 18:00.",
   confidenceText:
-    "Si no sabes qué plan elegir, te recomendamos el ideal según tu negocio.",
+    "Si no sabes qué plan elegir, te orientamos sin compromiso.",
 };
 
 export const siteWhatsappFloat = {
   ariaLabel: "Contactar por WhatsApp",
   whatsappText:
-    "Hola, vi tu página y quiero cotizar una página web.\n\nMi negocio es: \nCiudad: \nTengo WhatsApp Business: Sí/No\nTengo dominio: Sí/No\n\n¿Qué información adicional necesitas?",
+    "Hola, vi NuncaCierro y quiero automatizar mi negocio.\n\nMi negocio es: \nCiudad: \n¿Qué problema tengo?: \n\n¿Qué información necesitas de mí?",
 };
 
 export const siteUi = {
