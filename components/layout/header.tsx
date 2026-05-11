@@ -35,7 +35,7 @@ export function Header() {
 
   return (
     <header
-      className="fixed top-20 sm:top-12 left-0 right-0 z-50 transition-all duration-300 bg-[rgba(6,12,24,0.78)] shadow-lg border-b border-[rgba(56,189,248,0.18)] backdrop-blur-xl backdrop-saturate-150"
+      className="fixed top-20 sm:top-12 left-0 right-0 z-50 transition-all duration-300 bg-[rgba(28,25,23,0.85)] shadow-lg border-b border-[rgba(251,191,36,0.12)] backdrop-blur-xl backdrop-saturate-150"
       style={{
         WebkitBackdropFilter: "blur(16px) saturate(150%)",
         backdropFilter: "blur(16px) saturate(150%)",
@@ -93,7 +93,7 @@ export function Header() {
           {/* Mobile Menu Button */}
           <button
             type="button"
-            className="md:hidden p-2 text-stone-100 rounded-lg bg-[rgba(56,189,248,0.14)] hover:bg-[rgba(56,189,248,0.22)] transition-colors"
+            className="md:hidden p-2 text-stone-100 rounded-lg bg-[rgba(251,191,36,0.14)] hover:bg-[rgba(251,191,36,0.22)] transition-colors"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label={
               isMenuOpen ? mobileMenu.closeLabel : mobileMenu.openLabel
@@ -111,13 +111,13 @@ export function Header() {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <nav className="md:hidden mt-2 px-4 py-6 border-t border-[rgba(56,189,248,0.18)] bg-[rgba(6,12,24,0.94)] backdrop-blur-xl rounded-b-2xl shadow-lg">
+          <nav className="md:hidden mt-2 px-4 py-6 border-t border-[rgba(251,191,36,0.12)] bg-[rgba(28,25,23,0.94)] backdrop-blur-xl rounded-b-2xl shadow-lg">
             <div className="flex flex-col gap-5">
               {navItems.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-sm text-stone-100 hover:text-white transition-colors px-4 py-2 rounded-xl border border-[rgba(56,189,248,0.14)] bg-[rgba(56,189,248,0.08)] backdrop-blur-md hover:bg-[rgba(56,189,248,0.18)] shadow-sm"
+                  className="text-sm text-stone-100 hover:text-white transition-colors px-4 py-2 rounded-xl border border-[rgba(251,191,36,0.14)] bg-[rgba(251,191,36,0.08)] backdrop-blur-md hover:bg-[rgba(251,191,36,0.18)] shadow-sm"
                   style={{
                     WebkitBackdropFilter: "blur(8px)",
                     backdropFilter: "blur(8px)",

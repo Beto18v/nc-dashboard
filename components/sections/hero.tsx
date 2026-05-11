@@ -2,7 +2,7 @@
 
 import { Section } from "@/components/layout/section";
 import { Button } from "@/components/ui/button";
-import { ResponsiveDeviceMorph } from "@/components/ui/devices";
+import { BotPanel } from "@/components/ui/bot-panel";
 import { siteHero, companyName } from "@/data/site";
 
 import { ArrowRight } from "lucide-react";
@@ -85,11 +85,8 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="lg:pt-10">
-          <ResponsiveDeviceMorph
-            containerClassName="w-full sm:max-w-sm lg:max-w-130"
-            height={480}
-          />
+        <div className="lg:pt-8">
+          <BotPanel />
         </div>
       </div>
 
