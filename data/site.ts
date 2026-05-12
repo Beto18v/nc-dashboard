@@ -8,7 +8,7 @@ export const siteMetadata = {
   description:
     "Automatizamos tu WhatsApp para que respondas, agendes citas y vendas 24/7. Tu negocio nunca cierra. Ideal para restaurantes, clínicas, barberías, tiendas y más.",
   keywords:
-    "automatización WhatsApp Colombia, chatbot WhatsApp negocio, atender WhatsApp automáticamente, bot WhatsApp pequeña empresa, agendar citas WhatsApp, leads WhatsApp automático, nunca perder clientes WhatsApp, responder WhatsApp sin estar pendiente",
+    "automatización WhatsApp Colombia, chatbot WhatsApp negocio, atender WhatsApp automáticamente, bot WhatsApp pequeña empresa, agendar citas WhatsApp, clientes potenciales WhatsApp, nunca perder clientes WhatsApp, responder WhatsApp sin estar pendiente",
   preconnectUrls: ["https://images.unsplash.com"],
 };
 
@@ -92,13 +92,13 @@ export const siteServices = {
       icon: "Sparkles",
       title: "Asistente Inteligente",
       description:
-        "Agenda citas automáticas sin estar preguntando 'qué día te queda bien'. El bot hace seguimiento a leads que se enfriaron y recuerda citas automáticamente para que menos gente se desconecte.",
+        "Agenda citas automáticas sin estar preguntando 'qué día te queda bien'. El bot hace seguimiento a clientes interesados que se enfriaron y recuerda citas automáticamente para que menos gente se desconecte.",
     },
     {
       icon: "LayoutDashboard",
       title: "Sistema Completo",
       description:
-        "Landing page profesional con tu marca + automatización completa de WhatsApp. Dashboard para ver cuántos leads entraron, cuántos compraron y encuestas automáticas después de cada venta.",
+        "Página web profesional con tu marca + automatización completa de WhatsApp. Panel de control para ver cuántos clientes potenciales entraron, cuántos compraron y encuestas automáticas después de cada venta.",
     },
   ],
 };
@@ -254,7 +254,7 @@ export const siteExamples = {
         "Landing premium + bot para reservas y pedidos directos por WhatsApp 24/7.",
       longDescription:
         "Restaurante que atiende reservas automáticamente por WhatsApp, muestra el menú con solo pedirlo y capta clientes incluso cuando está cerrado.",
-      features: ["Bot de reservas 24/7", "Menú automático por WhatsApp", "Landing profesional"],
+      features: ["Bot de reservas 24/7", "Menú automático por WhatsApp", "Página web profesional"],
     },
     {
       name: "Spa Serenity",
@@ -266,7 +266,7 @@ export const siteExamples = {
         "Web elegante + bot que agenda citas y hace seguimiento automático de clientes.",
       longDescription:
         "Spa que agenda citas sin que la dueña esté pendiente, envía recordatorios automáticos y recupera clientes que preguntaron y no volvieron.",
-      features: ["Agenda automática por WhatsApp", "Recordatorios de citas", "Landing elegante"],
+      features: ["Agenda automática por WhatsApp", "Recordatorios de citas", "Página web elegante"],
     },
     {
       name: "Gym Performance",
@@ -275,10 +275,10 @@ export const siteExamples = {
       image:
         "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1400&q=80",
       shortDescription:
-        "Sitio de alto impacto + bot que capta leads y responde planes automáticamente.",
+        "Sitio de alto impacto + bot que capta clientes y responde planes automáticamente.",
       longDescription:
-        "Gimnasio que responde automáticamente precios y horarios, capta leads fuera de horario y agenda visitas de prueba sin intervención.",
-      features: ["Captación de leads 24/7", "Planes automáticos por WhatsApp", "SEO para Google"],
+        "Gimnasio que responde automáticamente precios y horarios, capta clientes fuera de horario y agenda visitas de prueba sin intervención.",
+      features: ["Captación de clientes 24/7", "Planes automáticos por WhatsApp", "Aparece en Google"],
     },
     {
       name: "Barbería Clásica",
@@ -290,7 +290,7 @@ export const siteExamples = {
         "Imagen sólida de marca + bot que agenda turnos y recuerda citas automáticamente.",
       longDescription:
         "Barbería que agenda turnos por WhatsApp sin que el barbero tenga que dejar de trabajar, envía recordatorios y recupera clientes perdidos.",
-      features: ["Agenda de turnos automática", "Recordatorios por WhatsApp", "Landing de marca"],
+      features: ["Agenda de turnos automática", "Recordatorios por WhatsApp", "Página web de marca"],
     },
     {
       name: "Beauty Studio",
@@ -299,10 +299,10 @@ export const siteExamples = {
       image:
         "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=1400&q=80",
       shortDescription:
-        "Diseño aspiracional + bot que califica leads y agenda citas automáticamente.",
+        "Diseño aspiracional + bot que califica clientes y agenda citas automáticamente.",
       longDescription:
         "Salón de belleza que califica clientes automáticamente, agenda citas y envía promociones sin que la dueña tenga que estar al teléfono.",
-      features: ["Calificación automática de leads", "Agenda inteligente", "Landing premium"],
+      features: ["Clasificación automática de clientes", "Agenda inteligente", "Página web profesional"],
     },
     {
       name: "Clínica Dental Pro",
@@ -314,12 +314,12 @@ export const siteExamples = {
         "Web confiable + bot que agenda citas y hace seguimiento post-consulta.",
       longDescription:
         "Clínica dental que agenda citas automáticamente, envía recordatorios y hace seguimiento post-consulta para mejorar la experiencia del paciente.",
-      features: ["Agenda de citas automática", "Seguimiento post-consulta", "SEO local"],
+      features: ["Agenda de citas automática", "Seguimiento después de la consulta", "Aparece en Google Maps"],
     },
   ],
 };
 
-// Plans section data (sin precios)
+// Plans section data
 export const sitePlans = {
   sectionId: "planes",
   label: "Planes",
@@ -329,52 +329,58 @@ export const sitePlans = {
   whatsappBaseUrl: "https://wa.me/573142482943?text=",
   buttonText: "Quiero este plan",
   cardLabels: {
-    default: "Plan",
-    featured: "Plan recomendado",
+    basic: "Básico",
+    professional: "Profesional",
+    enterprise: "Empresarial",
     featuredBadge: "Más elegido",
   },
   footerText:
-    "Todos los planes se facturan mensualmente. Podemos ajustar el alcance según lo que necesites.",
+    "Todos los planes se facturan mensualmente. Sin contratos largos, cancela cuando quieras.",
   guaranteeText:
     "Prueba el primer mes sin riesgo. Si no te gusta, lo cancelas y listo.",
   packages: [
     {
-      name: "Bot WhatsApp",
+      name: "Básico",
+      type: "Básico",
       description:
-        "Automatiza las preguntas frecuentes y no pierdas clientes nunca más.",
+        "Automatiza las preguntas frecuentes de tus clientes. Ideal para negocios pequeños que empiezan.",
       features: [
         "Responde automáticamente preguntas frecuentes",
-        "Captura leads fuera de horario",
-        "Catálogo interactivo automático",
+        "Atiende clientes fuera de horario",
         "Mensaje de bienvenida personalizado",
+        "Sin inteligencia artificial — solo respuestas programadas",
+        "Hasta 500 respuestas al mes",
         "Configuración en 48 horas",
       ],
       featured: false,
     },
     {
-      name: "Asistente Inteligente",
+      name: "Profesional",
+      type: "Profesional",
       description:
-        "Agenda citas, haz seguimientos y automatiza todo tu WhatsApp.",
+        "Inteligencia artificial que entiende lo que preguntan tus clientes. Para negocios con volumen constante.",
       features: [
-        "Todo lo del Bot WhatsApp",
-        "Agenda de citas automática (Google Calendar)",
-        "Seguimiento automático de leads",
-        "Recordatorios de citas por WhatsApp",
-        "Estadísticas básicas semanales",
+        "Todo lo del Plan Básico",
+        "Inteligencia artificial (entiende contexto, responde aunque no sea una palabra clave)",
+        "Respuestas ILIMITADAS",
+        "Catálogo interactivo automático",
+        "Hasta 3 negocios",
+        "Estadísticas de uso semanales",
       ],
       featured: true,
     },
     {
-      name: "Sistema Completo",
+      name: "Empresarial",
+      type: "Empresarial",
       description:
-        "Solución integral: web profesional + automatización completa.",
+        "Todo incluido: inteligencia artificial, panel de control, conexión personalizada y múltiples negocios.",
       features: [
-        "Todo lo del Asistente Inteligente",
-        "Landing page profesional con tu marca",
-        "Dashboard de métricas en vivo",
-        "Encuestas de satisfacción automáticas",
+        "Todo lo del Plan Profesional",
+        "Negocios ILIMITADOS",
+        "Panel de control web con métricas en vivo",
+        "Conexión personalizada para integrar con tus sistemas",
         "Soporte prioritario 24/7",
-        "Reportes semanales de resultados",
+        "Tiempo de respuesta garantizado",
       ],
       featured: false,
     },
