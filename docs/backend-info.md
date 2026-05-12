@@ -167,15 +167,40 @@ LOG_LEVEL="INFO"
 
 > Todos los endpoints están implementados en `bot/api.py` y accesibles bajo `/api`.
 
+### Businesses
+
 | Método | Ruta | Descripción | Estado |
 |--------|------|-------------|--------|
-| `GET` | `/api/businesses` | Listar todos los negocios | ✅ Implementado |
-| `GET` | `/api/businesses/{id}` | Obtener detalle de un negocio | ✅ Implementado |
-| `PATCH` | `/api/businesses/{id}/plan` | Cambiar plan (basic/professional/enterprise) | ✅ Implementado |
-| `GET` | `/api/businesses/{id}/usage` | Estadísticas de uso del negocio | ✅ Implementado |
-| `GET` | `/api/usage/summary` | Resumen global de uso (todos los negocios) | ✅ Implementado |
-| `POST` | `/api/businesses` | Crear nuevo negocio | ❌ Pendiente |
-| `DELETE` | `/api/businesses/{id}` | Eliminar negocio | ❌ Pendiente |
+| `GET` | `/api/businesses` | Listar todos los negocios | ✅ |
+| `GET` | `/api/businesses/{id}` | Obtener detalle de un negocio | ✅ |
+| `PATCH` | `/api/businesses/{id}/plan` | Cambiar plan (basic/professional/enterprise) | ✅ |
+| `GET` | `/api/businesses/{id}/usage` | Estadísticas de uso del negocio | ✅ |
+| `GET` | `/api/usage/summary` | Resumen global de uso (todos los negocios) | ✅ |
+
+### Leads
+
+| Método | Ruta | Descripción | Estado |
+|--------|------|-------------|--------|
+| `GET` | `/api/leads` | Listar leads. Opcional `?status=interesado` | ✅ |
+| `GET` | `/api/leads/{phone}` | Obtener lead por número de teléfono | ✅ |
+| `POST` | `/api/leads` | Crear un lead manualmente | ✅ |
+| `PATCH` | `/api/leads/{phone}/status` | Cambiar estado del lead | ✅ |
+| `GET` | `/api/leads/summary/stats` | Conteo de leads agrupados por estado | ✅ |
+
+### Leads — Auto-clasificación desde conversaciones
+
+Los leads se crean/actualizan **automáticamente** cuando el bot conversa con un prospecto. El sistema analiza el mensaje del usuario y lo clasifica en una etapa:
+
+| Mensaje del usuario | Lead queda como |
+|---------------------|-----------------|
+| "Qué es?", "Cómo funciona?" | `nuevo` |
+| "Qué tipo de negocio?", "Es complicado?" | `calificado` |
+| "Cuánto cuesta?", "Precios", "Planes" | `interesado` |
+| "Quiero una demo", "Puedo ver un ejemplo?" | `demo` |
+| "Me interesa", "Quiero contratar", "Hagámoslo" | `contratado` |
+| "No me interesa", "Cancelar", "Después hablamos" | `perdido` |
+
+No se retrocede — si un lead ya está como `contratado`, no baja a `nuevo`.
 
 ### Respuesta esperada de GET /api/businesses
 
@@ -266,13 +291,14 @@ Precios de referencia (desde `BRAND.md`):
 - [x] Sin secrets en el repo (credentials.json gitignored)
 - [x] Deploy en Railway
 
-### Fase 2 — Dashboard (🔜 Próximo)
-- [ ] API REST para CRUD de negocios
+### Fase 2 — Dashboard (✅ API lista, falta frontend)
+- [x] API REST de negocios (listar, detalle, cambiar plan, uso)
+- [x] API REST de leads (CRUD + auto-clasificación desde conversaciones)
 - [ ] Autenticación básica (admin único)
-- [ ] Listado de negocios con plan y estado
-- [ ] Cambio de plan desde el panel
-- [ ] Estadísticas de uso (mensajes, keywords vs AI, usuarios únicos)
-- [ ] Onboarding de nuevos negocios desde el frontend
+- [ ] Frontend: listado de negocios con plan y estado
+- [ ] Frontend: panel para cambiar plan
+- [ ] Frontend: tabla de leads con filtros por estado
+- [ ] Frontend: estadísticas de uso
 
 ### Fase 3 — Producción (🚧 Pendiente de Business Verification)
 - [ ] Publicar app de Meta
