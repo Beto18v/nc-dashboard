@@ -163,18 +163,19 @@ LOG_LEVEL="INFO"
 
 ---
 
-## 7. Endpoints Planificados (Para el Dashboard)
+## 7. Endpoints del Dashboard
 
-> Estos endpoints NO EXISTEN aún. Son los que necesita el frontend.
+> Todos los endpoints están implementados en `bot/api.py` y accesibles bajo `/api`.
 
-| Método | Ruta | Descripción | Prioridad |
-|--------|------|-------------|-----------|
-| `GET` | `/api/businesses` | Listar todos los negocios | 🔴 Alta |
-| `GET` | `/api/businesses/{id}` | Obtener detalle de un negocio | 🔴 Alta |
-| `PATCH` | `/api/businesses/{id}/plan` | Cambiar plan (basic/professional/enterprise) | 🔴 Alta |
-| `GET` | `/api/businesses/{id}/usage` | Estadísticas de uso del negocio | 🟡 Media |
-| `POST` | `/api/businesses` | Crear nuevo negocio | 🟡 Media |
-| `DELETE` | `/api/businesses/{id}` | Eliminar negocio | 🟡 Media |
+| Método | Ruta | Descripción | Estado |
+|--------|------|-------------|--------|
+| `GET` | `/api/businesses` | Listar todos los negocios | ✅ Implementado |
+| `GET` | `/api/businesses/{id}` | Obtener detalle de un negocio | ✅ Implementado |
+| `PATCH` | `/api/businesses/{id}/plan` | Cambiar plan (basic/professional/enterprise) | ✅ Implementado |
+| `GET` | `/api/businesses/{id}/usage` | Estadísticas de uso del negocio | ✅ Implementado |
+| `GET` | `/api/usage/summary` | Resumen global de uso (todos los negocios) | ✅ Implementado |
+| `POST` | `/api/businesses` | Crear nuevo negocio | ❌ Pendiente |
+| `DELETE` | `/api/businesses/{id}` | Eliminar negocio | ❌ Pendiente |
 
 ### Respuesta esperada de GET /api/businesses
 
@@ -203,22 +204,36 @@ LOG_LEVEL="INFO"
 ]
 ```
 
-### Respuesta esperada de GET /api/businesses/{id}/usage
+### Respuesta real de GET /api/businesses/{id}/usage
 
 ```json
 {
   "business_id": "nunca-cierro",
-  "period": "2026-05",
-  "total_messages": 1450,
-  "keyword_matches": 1200,
-  "ai_responses": 250,
-  "unique_users": 89,
-  "daily_breakdown": [
-    {"date": "2026-05-01", "messages": 45},
-    {"date": "2026-05-02", "messages": 52}
-  ]
+  "month": "2026-05",
+  "total": 1450,
+  "keyword": 1200,
+  "ai": 250,
+  "plan": "professional",
+  "limit": null
 }
 ```
+
+> `limit` es `500` para plan basic, `null` para professional/enterprise (ilimitado).
+
+### Respuesta real de GET /api/usage/summary
+
+```json
+{
+  "month": "2026-05",
+  "total_messages": 3200,
+  "keyword_matches": 2800,
+  "ai_responses": 400,
+  "business_count": 4,
+  "active_count": 1
+}
+```
+
+> `active_count` = negocios con phone_number_id real (no demo).
 
 ---
 
