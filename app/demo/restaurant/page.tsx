@@ -634,7 +634,7 @@ export default function RestaurantDemo() {
 
               <div className="mt-8 flex flex-wrap gap-3">
                 <a
-                  href="https://wa.me/573142482943?text=Hola,%20vi%20la%20demo%20de%20tu%20restaurante%20y%20me%20gustaría%20cotizar%20un%20sitio%20web.%20¿Que%20información%20necesitas?"
+                  href="https://wa.me/573219615338?text=Hola,%20vi%20la%20demo%20de%20tu%20restaurante%20y%20me%20gustaría%20cotizar%20un%20sitio%20web.%20¿Que%20información%20necesitas?"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="premium-cta rounded-full px-6 py-3 font-semibold text-[#21150f]"
@@ -667,7 +667,7 @@ export default function RestaurantDemo() {
       </main>
 
       <a
-        href="https://wa.me/573142482943?text=Hola,%20quiero%20reservar%20en%20La%20Toscana"
+        href="https://wa.me/573219615338?text=Hola,%20quiero%20reservar%20en%20La%20Toscana"
         target="_blank"
         rel="noopener noreferrer"
         className="gold-glow fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#d2a25e] text-[#1a120e] shadow-xl transition hover:scale-105"

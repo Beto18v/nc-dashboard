@@ -15,7 +15,7 @@ export const siteMetadata = {
 export const siteBanner = {
   message: "🤖 Atiende clientes 24/7 aunque estés durmiendo",
   messageMobile: "🤖 Atiende clientes 24/7",
-  whatsappNumber: "573142482943",
+  whatsappNumber: "573219615338",
   whatsappText:
     "Hola, quiero automatizar mi negocio con NuncaCierro.\n\nMi negocio es: ->\nEstoy ubicado en: ->\nMi mayor problema con los clientes es: ->",
   get whatsappUrl() {
@@ -34,7 +34,7 @@ export const siteHero = {
   cta: {
     primary: {
       label: "Quiero automatizar mi negocio",
-      href: "https://wa.me/573142482943?text=Hola%2C%20quiero%20automatizar%20mi%20negocio%20con%20NuncaCierro.",
+      href: "https://wa.me/573219615338?text=Hola%2C%20quiero%20automatizar%20mi%20negocio%20con%20NuncaCierro.",
     },
     secondary: {
       label: "Ver servicios",
@@ -185,22 +185,22 @@ export const footerData = {
     {
       icon: "FaWhatsapp",
       label: "WhatsApp",
-      href: "https://wa.me/573142482943",
+      href: "https://wa.me/573219615338",
     },
     {
       icon: "FaInstagram",
       label: "Instagram",
-      href: "https://wa.me/573142482943",
+      href: "https://wa.me/573219615338",
     },
     {
       icon: "FaFacebook",
       label: "Facebook",
-      href: "https://wa.me/573142482943",
+      href: "https://wa.me/573219615338",
     },
     {
       icon: "FaXTwitter",
       label: "X (Twitter)",
-      href: "https://wa.me/573142482943",
+      href: "https://wa.me/573219615338",
     },
   ],
   copyright: {
@@ -326,7 +326,7 @@ export const sitePlans = {
   title: "Elige el plan según lo que necesite tu negocio",
   subtitle:
     "Todos incluyen configuración completa y soporte. Sin contratos largos. Cancela cuando quieras.",
-  whatsappBaseUrl: "https://wa.me/573142482943?text=",
+  whatsappBaseUrl: "https://wa.me/573219615338?text=",
   buttonText: "Quiero este plan",
   cardLabels: {
     basic: "Básico",
@@ -464,8 +464,8 @@ export const siteContact = {
     {
       icon: "MessageCircle",
       label: "WhatsApp",
-      href: "https://wa.me/573142482943",
-      text: "+57 3142482943",
+      href: "https://wa.me/573219615338",
+      text: "+57 3219615338",
     },
   ],
   quickResponseText: "Respuesta en menos de 2 horas (horario laboral)",
