@@ -21,13 +21,8 @@ export default function DashboardPage() {
       {/* ── Welcome ── */}
       <div>
         <h1 className="text-2xl font-bold tracking-tight">Dashboard</h1>
-        <p className="text-muted-foreground mt-1 flex items-center gap-2">
+        <p className="text-muted-foreground mt-1">
           Bienvenido, {user?.name ?? user?.email ?? "Usuario"}
-          {user?.role && (
-            <span className="rounded-full bg-primary/10 px-2.5 py-0.5 text-xs capitalize text-primary">
-              {user.role}
-            </span>
-          )}
         </p>
       </div>
 

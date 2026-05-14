@@ -7,8 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/hooks/use-auth";
 import { ApiError } from "@/lib/api";
-import { isAuthEnabled } from "@/lib/config";
-import { Loader2, ShieldCheck } from "lucide-react";
+import { Loader2 } from "lucide-react";
 
 /* ------------------------------------------------------------------ */
 /*  Exported page                                                      */
@@ -29,7 +28,7 @@ export default function LoginPage() {
 }
 
 /* ------------------------------------------------------------------ */
-/*  Inner form (uses useSearchParams → needs Suspense)                 */
+/*  Inner form                                                         */
 /* ------------------------------------------------------------------ */
 
 function LoginForm() {
@@ -40,13 +39,6 @@ function LoginForm() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
-
-  useEffect(() => {
-    const reason = searchParams.get("reason");
-    if (reason === "unauthorized") {
-      setError("No tienes permisos para acceder a esa sección.");
-    }
-  }, [searchParams]);
 
   useEffect(() => {
     if (isAuthenticated) {
@@ -65,9 +57,6 @@ function LoginForm() {
     } catch (err) {
       if (err instanceof ApiError) {
         switch (err.status) {
-          case 429:
-            setError("Demasiados intentos. Cuenta bloqueada temporalmente.");
-            break;
           case 401:
             setError("Credenciales inválidas.");
             break;
@@ -86,22 +75,9 @@ function LoginForm() {
     }
   };
 
-  const handleDemoLogin = async () => {
-    setError("");
-    setIsSubmitting(true);
-    try {
-      await login("demo@demo.com", "demo");
-      router.replace("/dashboard");
-    } catch {
-      setError("Error al iniciar sesión demo.");
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
   return (
     <div className="flex min-h-screen items-center justify-center bg-background p-4">
-      <div className="w-full max-w-sm space-y-4">
+      <div className="w-full max-w-sm">
         <Card className="w-full">
           <CardHeader className="text-center">
             <CardTitle className="text-2xl font-bold tracking-tight">
@@ -167,39 +143,6 @@ function LoginForm() {
             </form>
           </CardContent>
         </Card>
-
-        {/* ── Demo / offline mode quick access ── */}
-        {!isAuthEnabled && (
-          <Card className="w-full border-dashed border-amber-300 dark:border-amber-700">
-            <CardContent className="pt-6">
-              <div className="text-center">
-                <ShieldCheck className="mx-auto mb-2 size-8 text-amber-500" />
-                <p className="mb-1 text-sm font-medium text-amber-700 dark:text-amber-400">
-                  Modo Demo
-                </p>
-                <p className="mb-4 text-xs text-muted-foreground">
-                  Sin conexión al backend. Haz clic para acceder como
-                  administrador de prueba.
-                </p>
-                <Button
-                  variant="outline"
-                  className="w-full border-amber-300 text-amber-700 hover:bg-amber-50 dark:border-amber-700 dark:text-amber-400 dark:hover:bg-amber-950"
-                  onClick={handleDemoLogin}
-                  disabled={isSubmitting}
-                >
-                  {isSubmitting ? (
-                    <>
-                      <Loader2 className="mr-2 size-4 animate-spin" />
-                      Accediendo...
-                    </>
-                  ) : (
-                    "Acceder como Admin (Demo)"
-                  )}
-                </Button>
-              </div>
-            </CardContent>
-          </Card>
-        )}
       </div>
     </div>
   );
