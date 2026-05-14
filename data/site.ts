@@ -3,8 +3,7 @@ export const companyName = "NuncaCierro";
 
 export const siteMetadata = {
   lang: "es",
-  title:
-    "NuncaCierro | Automatización WhatsApp para negocios en Colombia",
+  title: "NuncaCierro | Automatización WhatsApp para negocios en Colombia",
   description:
     "Automatizamos tu WhatsApp para que respondas, agendes citas y vendas 24/7. Tu negocio nunca cierra. Ideal para restaurantes, clínicas, barberías, tiendas y más.",
   keywords:
@@ -28,7 +27,8 @@ export const siteBanner = {
 // Hero section data
 export const siteHero = {
   sectionId: "inicio",
-  title: "Atiende clientes 24/7 aunque estés durmiendo o cerrado con " + companyName,
+  title:
+    "Atiende clientes 24/7 aunque estés durmiendo o cerrado con " + companyName,
   subtitle:
     "Automatizamos tu WhatsApp para que nunca pierdas un cliente. Responde preguntas, agenda citas y vende automáticamente — incluso cuando no estás.",
   cta: {
@@ -108,11 +108,9 @@ export const siteProcess = {
   sectionId: "proceso",
   label: "Proceso",
   title: "Así de simple empezamos",
-  subtitle:
-    "Tres pasos claros para que tu negocio empiece a atender 24/7.",
+  subtitle: "Tres pasos claros para que tu negocio empiece a atender 24/7.",
   stepLabelPrefix: "Paso",
-  footerText:
-    "Te mostramos avances y una versión de prueba antes de activar.",
+  footerText: "Te mostramos avances y una versión de prueba antes de activar.",
   steps: [
     {
       number: "01",
@@ -138,8 +136,8 @@ export const siteProcess = {
 // Header data layout
 export const headerData = {
   brand: {
-    name: "NuncaCierro",
-    accent: "",
+    name: "NC",
+    accent: ".",
     href: "/",
     logo: {
       src: "/Logonobg.png",
@@ -221,7 +219,8 @@ export const siteExamples = {
   sectionId: "ejemplos",
   label: "Ejemplos",
   title: "Así funciona con cada negocio",
-  subtitle: "Cada demo incluye página web profesional + automatización por WhatsApp.",
+  subtitle:
+    "Cada demo incluye página web profesional + automatización por WhatsApp.",
   secondarySubtitle:
     "Combinamos diseño web con automatización inteligente para que cada negocio atienda 24/7 y nunca pierda un cliente.",
   imageAltPrefix: "Demo",
@@ -254,7 +253,11 @@ export const siteExamples = {
         "Landing premium + bot para reservas y pedidos directos por WhatsApp 24/7.",
       longDescription:
         "Restaurante que atiende reservas automáticamente por WhatsApp, muestra el menú con solo pedirlo y capta clientes incluso cuando está cerrado.",
-      features: ["Bot de reservas 24/7", "Menú automático por WhatsApp", "Página web profesional"],
+      features: [
+        "Bot de reservas 24/7",
+        "Menú automático por WhatsApp",
+        "Página web profesional",
+      ],
     },
     {
       name: "Spa Serenity",
@@ -266,7 +269,11 @@ export const siteExamples = {
         "Web elegante + bot que agenda citas y hace seguimiento automático de clientes.",
       longDescription:
         "Spa que agenda citas sin que la dueña esté pendiente, envía recordatorios automáticos y recupera clientes que preguntaron y no volvieron.",
-      features: ["Agenda automática por WhatsApp", "Recordatorios de citas", "Página web elegante"],
+      features: [
+        "Agenda automática por WhatsApp",
+        "Recordatorios de citas",
+        "Página web elegante",
+      ],
     },
     {
       name: "Gym Performance",
@@ -278,7 +285,11 @@ export const siteExamples = {
         "Sitio de alto impacto + bot que capta clientes y responde planes automáticamente.",
       longDescription:
         "Gimnasio que responde automáticamente precios y horarios, capta clientes fuera de horario y agenda visitas de prueba sin intervención.",
-      features: ["Captación de clientes 24/7", "Planes automáticos por WhatsApp", "Aparece en Google"],
+      features: [
+        "Captación de clientes 24/7",
+        "Planes automáticos por WhatsApp",
+        "Aparece en Google",
+      ],
     },
     {
       name: "Barbería Clásica",
@@ -290,7 +301,11 @@ export const siteExamples = {
         "Imagen sólida de marca + bot que agenda turnos y recuerda citas automáticamente.",
       longDescription:
         "Barbería que agenda turnos por WhatsApp sin que el barbero tenga que dejar de trabajar, envía recordatorios y recupera clientes perdidos.",
-      features: ["Agenda de turnos automática", "Recordatorios por WhatsApp", "Página web de marca"],
+      features: [
+        "Agenda de turnos automática",
+        "Recordatorios por WhatsApp",
+        "Página web de marca",
+      ],
     },
     {
       name: "Beauty Studio",
@@ -302,7 +317,11 @@ export const siteExamples = {
         "Diseño aspiracional + bot que califica clientes y agenda citas automáticamente.",
       longDescription:
         "Salón de belleza que califica clientes automáticamente, agenda citas y envía promociones sin que la dueña tenga que estar al teléfono.",
-      features: ["Clasificación automática de clientes", "Agenda inteligente", "Página web profesional"],
+      features: [
+        "Clasificación automática de clientes",
+        "Agenda inteligente",
+        "Página web profesional",
+      ],
     },
     {
       name: "Clínica Dental Pro",
@@ -314,7 +333,11 @@ export const siteExamples = {
         "Web confiable + bot que agenda citas y hace seguimiento post-consulta.",
       longDescription:
         "Clínica dental que agenda citas automáticamente, envía recordatorios y hace seguimiento post-consulta para mejorar la experiencia del paciente.",
-      features: ["Agenda de citas automática", "Seguimiento después de la consulta", "Aparece en Google Maps"],
+      features: [
+        "Agenda de citas automática",
+        "Seguimiento después de la consulta",
+        "Aparece en Google Maps",
+      ],
     },
   ],
 };
@@ -386,8 +409,7 @@ export const sitePlans = {
     },
   ],
   advisoryCta: {
-    title:
-      "¿No sabes qué plan elegir? Te orientamos sin compromiso.",
+    title: "¿No sabes qué plan elegir? Te orientamos sin compromiso.",
     description:
       "Te mostramos cómo funciona cada plan y te recomendamos el ideal para tu negocio.",
     buttonText: "Agendar asesoría gratis",
@@ -405,7 +427,8 @@ export const siteFaq = {
     "Respondemos tus dudas para que tomes la mejor decisión sin vueltas.",
   items: [
     {
-      question: "¿Qué pasa con mi WhatsApp cuando configuran el bot? ¿Dejo de recibir mensajes?",
+      question:
+        "¿Qué pasa con mi WhatsApp cuando configuran el bot? ¿Dejo de recibir mensajes?",
       answer:
         "No, todo lo contrario. Sigues recibiendo mensajes normal. El bot solo responde automáticamente preguntas frecuentes y fuera de horario. Cuando estés disponible, tomas el control cuando quieras.",
     },
@@ -492,8 +515,7 @@ export const siteContact = {
     ],
   },
   footerText: "Te respondemos de lunes a viernes, de 9:00 a 18:00.",
-  confidenceText:
-    "Si no sabes qué plan elegir, te orientamos sin compromiso.",
+  confidenceText: "Si no sabes qué plan elegir, te orientamos sin compromiso.",
 };
 
 export const siteWhatsappFloat = {

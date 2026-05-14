@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import { headerData } from "@/data/site";
 
@@ -49,15 +48,13 @@ export function Header() {
             style={{ letterSpacing: "0.01em" }}
             onClick={(e) => handleSmoothScroll(e, brand.href)}
           >
-            <Image
-              src={brand.logo.src}
-              alt={brand.logo.alt}
-              width={brand.logo.width}
-              height={brand.logo.height}
-              priority
-              sizes={brand.logo.sizes}
-              className="h-28 w-auto mt-2"
-            />
+            <span
+              className="text-xl font-bold"
+              style={{ letterSpacing: "-0.4px" }}
+            >
+              <span className="text-white">{brand.name}</span>
+              <span className="text-amber-300 ">{brand.accent}</span>
+            </span>
           </a>
 
           {/* Desktop Navigation */}
