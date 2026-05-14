@@ -2,30 +2,17 @@
 
 /* ------------------------------------------------------------------ */
 /*  Backend API client — talks to FastAPI via Next.js rewrites         */
+/*                                                                     */
+/*  All /api/:path* calls are rewritten to http://localhost:8000/api/  */
+/*  via next.config.ts rewrites.                                       */
 /* ------------------------------------------------------------------ */
+
+import type { AuthUser, LoginResponse } from "@/lib/types";
 
 export const TOKEN_KEYS = {
   access: "nc_access_token",
   user: "nc_user",
 } as const;
-
-/* ------------------------------------------------------------------ */
-/*  Types                                                              */
-/* ------------------------------------------------------------------ */
-
-export interface AuthUser {
-  id: string;
-  email: string;
-  name: string;
-}
-
-export interface LoginResponse {
-  access_token: string;
-  token_type: string;
-  user_id: string;
-  email: string;
-  name: string;
-}
 
 export class ApiError extends Error {
   status: number;

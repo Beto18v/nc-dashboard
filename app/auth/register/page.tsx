@@ -1,7 +1,7 @@
 "use client";
 
 import { Suspense, useState, useEffect } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -14,7 +14,7 @@ import { Loader2 } from "lucide-react";
 /*  Exported page                                                      */
 /* ------------------------------------------------------------------ */
 
-export default function LoginPage() {
+export default function RegisterPage() {
   return (
     <Suspense
       fallback={
@@ -23,7 +23,7 @@ export default function LoginPage() {
         </div>
       }
     >
-      <LoginForm />
+      <RegisterForm />
     </Suspense>
   );
 }
@@ -32,10 +32,10 @@ export default function LoginPage() {
 /*  Inner form                                                         */
 /* ------------------------------------------------------------------ */
 
-function LoginForm() {
+function RegisterForm() {
   const router = useRouter();
-  const searchParams = useSearchParams();
-  const { login, isAuthenticated } = useAuth();
+  const { register, isAuthenticated } = useAuth();
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -53,16 +53,16 @@ function LoginForm() {
     setIsSubmitting(true);
 
     try {
-      await login(email, password);
+      await register(email, password, name);
       router.replace("/dashboard");
     } catch (err) {
       if (err instanceof ApiError) {
         switch (err.status) {
-          case 401:
-            setError("Credenciales inválidas.");
+          case 409:
+            setError("Este email ya está registrado.");
             break;
           case 422:
-            setError("Por favor ingresa email y contraseña.");
+            setError("Verifica los datos ingresados.");
             break;
           default:
             setError("Error del servidor. Intenta de nuevo.");
@@ -82,10 +82,10 @@ function LoginForm() {
         <Card className="w-full">
           <CardHeader className="text-center">
             <CardTitle className="text-2xl font-bold tracking-tight">
-              NuncaCierro
+              Crear Cuenta
             </CardTitle>
             <p className="text-muted-foreground mt-1 text-sm">
-              Panel de administración
+              Regístrate para administrar NuncaCierro
             </p>
           </CardHeader>
 
@@ -101,6 +101,22 @@ function LoginForm() {
               )}
 
               <div className="space-y-2">
+                <label htmlFor="name" className="text-sm font-medium">
+                  Nombre
+                </label>
+                <Input
+                  id="name"
+                  type="text"
+                  placeholder="Tu nombre"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  required
+                  autoComplete="name"
+                  autoFocus
+                />
+              </div>
+
+              <div className="space-y-2">
                 <label htmlFor="email" className="text-sm font-medium">
                   Email
                 </label>
@@ -112,7 +128,6 @@ function LoginForm() {
                   onChange={(e) => setEmail(e.target.value)}
                   required
                   autoComplete="email"
-                  autoFocus
                 />
               </div>
 
@@ -127,7 +142,7 @@ function LoginForm() {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required
-                  autoComplete="current-password"
+                  autoComplete="new-password"
                 />
               </div>
 
@@ -135,21 +150,21 @@ function LoginForm() {
                 {isSubmitting ? (
                   <>
                     <Loader2 className="mr-2 size-4 animate-spin" />
-                    Iniciando sesión...
+                    Creando cuenta...
                   </>
                 ) : (
-                  "Iniciar Sesión"
+                  "Crear Cuenta"
                 )}
               </Button>
             </form>
 
             <p className="text-muted-foreground mt-6 text-center text-sm">
-              ¿No tienes cuenta?{" "}
+              ¿Ya tienes cuenta?{" "}
               <Link
-                href="/auth/register"
+                href="/auth/login"
                 className="font-medium text-primary hover:underline"
               >
-                Regístrate
+                Inicia Sesión
               </Link>
             </p>
           </CardContent>

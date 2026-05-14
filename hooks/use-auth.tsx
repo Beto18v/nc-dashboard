@@ -10,10 +10,11 @@ import {
 } from "react";
 import {
   login as apiLogin,
+  register as apiRegister,
   getProfile as apiGetProfile,
-  type AuthUser,
   TOKEN_KEYS,
 } from "@/lib/api";
+import type { AuthUser } from "@/lib/types";
 
 /* ------------------------------------------------------------------ */
 /*  Types                                                              */
@@ -24,6 +25,7 @@ export interface AuthContextType {
   isLoading: boolean;
   isAuthenticated: boolean;
   login: (email: string, password: string) => Promise<void>;
+  register: (email: string, password: string, name: string) => Promise<void>;
   logout: () => void;
 }
 
@@ -74,6 +76,15 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     setUser({ id: data.user_id, email: data.email, name: data.name });
   }, []);
 
+  /* ── Register ── */
+  const register = useCallback(
+    async (_email: string, _password: string, _name: string) => {
+      const data = await apiRegister(_email, _password, _name);
+      setUser({ id: data.user_id, email: data.email, name: data.name });
+    },
+    [],
+  );
+
   /* ── Logout ── */
   const logout = useCallback(() => {
     localStorage.removeItem(TOKEN_KEYS.access);
@@ -91,6 +102,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         isLoading,
         isAuthenticated: !!user,
         login,
+        register,
         logout,
       }}
     >

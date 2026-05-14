@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { AuthProvider } from "@/hooks/use-auth";
 import { Analytics } from "@vercel/analytics/next";
+import { Toaster } from "sonner";
 import { siteMetadata } from "@/data/site";
 
 const geistSans = Geist({
@@ -60,7 +61,10 @@ export default function RootLayout({
           enableSystem={false}
           disableTransitionOnChange
         >
-          <AuthProvider>{children}</AuthProvider>
+          <AuthProvider>
+            {children}
+            <Toaster richColors closeButton position="top-right" />
+          </AuthProvider>
         </ThemeProvider>
       </body>
     </html>
