@@ -4,15 +4,10 @@ import { useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import Link from "next/link";
 import { useTenant } from "@/hooks/use-tenant";
-import { TenantInfo } from "@/components/tenants/tenant-info";
-import { TenantForm } from "@/components/tenants/tenant-form";
+import { TenantInfo } from "@/app/dashboard/tenants/components/tenant-info";
+import { TenantForm } from "@/app/dashboard/tenants/components/tenant-form";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -24,13 +19,7 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
-import {
-  ArrowLeft,
-  Pencil,
-  Trash2,
-  Loader2,
-  AlertCircle,
-} from "lucide-react";
+import { ArrowLeft, Pencil, Trash2, Loader2, AlertCircle } from "lucide-react";
 import { ApiError } from "@/lib/api";
 import { toast } from "sonner";
 import type { TenantFormValues } from "@/lib/schemas/tenant";
@@ -166,8 +155,8 @@ export default function TenantDetailPage() {
               <AlertDialogHeader>
                 <AlertDialogTitle>¿Eliminar negocio?</AlertDialogTitle>
                 <AlertDialogDescription>
-                  Esta acción no se puede deshacer. Se eliminará
-                  permanentemente {tenant.name} y todos sus datos asociados.
+                  Esta acción no se puede deshacer. Se eliminará permanentemente{" "}
+                  {tenant.name} y todos sus datos asociados.
                 </AlertDialogDescription>
               </AlertDialogHeader>
               <AlertDialogFooter>

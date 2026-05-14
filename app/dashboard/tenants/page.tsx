@@ -1,7 +1,7 @@
 "use client";
 
 import { useTenants } from "@/hooks/use-tenants";
-import { TenantList } from "@/components/tenants/tenant-list";
+import { TenantList } from "@/app/dashboard/tenants/components/tenant-list";
 
 export default function TenantsPage() {
   const { tenants, isLoading, error } = useTenants();

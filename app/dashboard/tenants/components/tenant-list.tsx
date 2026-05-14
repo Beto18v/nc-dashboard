@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { TenantStatusBadge } from "@/components/tenants/tenant-status-badge";
+import { TenantStatusBadge } from "@/app/dashboard/tenants/components/tenant-status-badge";
 import { Plus, ExternalLink, Loader2 } from "lucide-react";
 import type { Tenant } from "@/lib/types";
 

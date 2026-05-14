@@ -3,36 +3,38 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import { useWhatsAppNumbers } from "@/hooks/use-whatsapp-numbers";
 import { useTenants } from "@/hooks/use-tenants";
-import { TenantForm } from "@/app/dashboard/tenants/components/tenant-form";
+import { WhatsAppForm } from "@/app/dashboard/whatsapp/components/whatsapp-form";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
 import { ApiError } from "@/lib/api";
 import { toast } from "sonner";
-import type { TenantFormValues } from "@/lib/schemas/tenant";
+import type { WhatsAppNumberFormValues } from "@/lib/schemas/whatsapp";
 
-export default function NewTenantPage() {
+export default function NewWhatsAppPage() {
   const router = useRouter();
-  const { createTenant } = useTenants();
+  const { createNumber } = useWhatsAppNumbers();
+  const { tenants, isLoading: loadingTenants } = useTenants();
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = async (data: TenantFormValues) => {
+  const handleSubmit = async (data: WhatsAppNumberFormValues) => {
     setIsSubmitting(true);
 
     try {
-      const tenant = await createTenant(data);
-      toast.success("Negocio creado exitosamente");
-      router.push(`/dashboard/tenants/${tenant.id}`);
+      const number = await createNumber(data);
+      toast.success("Número registrado exitosamente");
+      router.push(`/dashboard/whatsapp/${number.id}`);
     } catch (err) {
       if (err instanceof ApiError) {
         if (err.status === 409) {
-          toast.error("El slug ya está en uso. Elige otro.");
+          toast.error("El Phone Number ID ya está registrado.");
         } else {
-          toast.error("Error al crear el negocio. Intenta de nuevo.");
+          toast.error("Error al registrar el número. Intenta de nuevo.");
         }
       } else {
-        toast.error("Error de conexión. Verifica tu conexión a internet.");
+        toast.error("Error de conexión.");
       }
     } finally {
       setIsSubmitting(false);
@@ -41,31 +43,31 @@ export default function NewTenantPage() {
 
   return (
     <div className="space-y-6">
-      {/* ── Back ── */}
       <div>
         <Button asChild variant="ghost" size="sm">
-          <Link href="/dashboard/tenants">
+          <Link href="/dashboard/whatsapp">
             <ArrowLeft className="mr-2 size-4" />
-            Volver a Negocios
+            Volver a Números
           </Link>
         </Button>
       </div>
 
-      {/* ── Form ── */}
       <Card className="max-w-2xl">
         <CardHeader>
           <CardTitle className="text-xl font-bold tracking-tight">
-            Nuevo Negocio
+            Registrar Número WhatsApp
           </CardTitle>
           <p className="text-muted-foreground mt-1 text-sm">
-            Registra un nuevo negocio en la plataforma.
+            Asocia un número de WhatsApp Business a un negocio.
           </p>
         </CardHeader>
         <CardContent>
-          <TenantForm
+          <WhatsAppForm
             onSubmit={handleSubmit}
             isSubmitting={isSubmitting}
             mode="create"
+            tenants={tenants}
+            tenantsLoading={loadingTenants}
           />
         </CardContent>
       </Card>

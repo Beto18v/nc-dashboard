@@ -1,7 +1,7 @@
 "use client";
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { TenantStatusBadge } from "@/components/tenants/tenant-status-badge";
+import { TenantStatusBadge } from "@/app/dashboard/tenants/components/tenant-status-badge";
 import { Calendar, Globe, Clock, FileText } from "lucide-react";
 import type { Tenant } from "@/lib/types";
 
@@ -61,11 +61,7 @@ export function TenantInfo({ tenant }: TenantInfoProps) {
           <CardTitle className="text-sm font-medium">Detalles</CardTitle>
         </CardHeader>
         <CardContent className="grid gap-4 sm:grid-cols-2">
-          <InfoRow
-            icon={Globe}
-            label="Slug"
-            value={tenant.slug}
-          />
+          <InfoRow icon={Globe} label="Slug" value={tenant.slug} />
           <InfoRow
             icon={Calendar}
             label="Creado"
@@ -75,16 +71,8 @@ export function TenantInfo({ tenant }: TenantInfoProps) {
               day: "numeric",
             })}
           />
-          <InfoRow
-            icon={Clock}
-            label="Zona horaria"
-            value={tenant.timezone}
-          />
-          <InfoRow
-            icon={Globe}
-            label="Región"
-            value={tenant.locale}
-          />
+          <InfoRow icon={Clock} label="Zona horaria" value={tenant.timezone} />
+          <InfoRow icon={Globe} label="Región" value={tenant.locale} />
         </CardContent>
       </Card>
 
